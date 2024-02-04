@@ -13,7 +13,7 @@ kramdown:
 title:               Kai Fronsdal
 tagline:             'AI Researcher'
 description:         ''
-url:                 http://kaifronsdal.github.io
+url:                 https://kaifronsdal.github.io
 baseurl:             ''
 paginate:            5
 permalink:           pretty
@@ -21,7 +21,7 @@ permalink:           pretty
 # About/contact
 author:
   name:              Kai Fronsdal
-  url:               http://kaifronsdal.github.io
+  url:               https://kaifronsdal.github.io
   email:             kaifronsdal@gmail.com
 
 # Gems
