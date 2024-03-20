@@ -3,21 +3,23 @@ layout: post
 title: Can AI Self-Correct? Analyzing the Limitations of Large Language Models
 ---
 
-# Can AI Self-Correct? Analyzing the Limitations of Large Language Models
+_This post is a summary of [this](/writing/CS224N__Project_Final_Report.pdf) research paper writen as a final project for Stanford's CS 224N._
 
 As models become more and more powerful, they have started to approach or exceed human-level performance on a variety of tasks. In order to train these models, researchers have been using increasingly large datasets and models. However, as these model approach human limits, it becomes harder and harder to improve them from human feedback.
 
 The natural solution is to replace the human feedback with model feedback; that is, to have the model evaluate its own outputs and make necessary amendments. There are several varients to this process, including RLAIF and Constitutional AI, but the basic idea follows the following abstract process:
 
-![RLAIF](/_images/can_llms_self_correct/Screenshot 2024-03-19 at 3.21.02 PM.png)
+![RLAIF](../assets/can_llms_self_correct/Screenshot%202024-03-19%20at%203.21.02%20PM.png)
 
-Learning from model feedback has become a prevalent strategy for scaling models beyond human capabilities (i.e. RLAIF and its varients). The concept of self-correction, in particular, offers the potential for enhancing the fundamental reasoning abilities of Large Language Models (LLMs).
+However, this method operates under the assumption that the feedback is actually aligned. Researchers have shown that these models can be easily swayed by biased feedback, which might hint at a fundamental deficit in their ability to self-correct and result in runaway feedback loops if used in an RLAIF pipeline. In this post we will explore the validity of the feedback step in this pipeline, and whether it is possible for AI to self-correct.
+
+<!-- The concept of self-correction, in particular, offers the potential for enhancing the fundamental reasoning abilities of Large Language Models (LLMs). -->
 
 <!-- For years, artificial intelligence (AI) researchers have been refining a type of machine learning model known as large language models (LLMs). Their goal is to create AI that understands language at a human-like level, and in some respects, they have been astonishingly successful. These models can generate convincing text that appears almost human-crafted.  -->
 
-However, while these models display intelligent behaviors, they also manifest unexpected and incorrect behaviors. They might produce responses that seem sensible at first glance but are fundamentally incorrect or nonsensical upon closer inspection. To address this issue, researchers have been exploring avenues to improve LLMs’ reasoning abilities. One promising method is self-correction, where a model evaluates its own outputs and makes necessary amendments.
+<!-- However, while these models display intelligent behaviors, they also manifest unexpected and incorrect behaviors. They might produce responses that seem sensible at first glance but are fundamentally incorrect or nonsensical upon closer inspection. To address this issue, researchers have been exploring avenues to improve LLMs’ reasoning abilities. One promising method is self-correction, where a model evaluates its own outputs and makes necessary amendments.
 
-In this post, we delve into the viability of self-correction in the domain of mathematics. In particular, we examine whether these AI models can detect errors in mathematical reasoning and calculation, and whether this ability can be improved with fine-tuning.
+In this post, we delve into the viability of self-correction in the domain of mathematics. In particular, we examine whether these AI models can detect errors in mathematical reasoning and calculation, and whether this ability can be improved with fine-tuning. -->
 
 ## The Challenges of Self-Correction
 
@@ -25,11 +27,31 @@ The idea behind self-correction is relatively simple. If you give an LLM a mathe
 
 Unfortunately, it’s not quite that simple.
 
-Recent results suggest that LLMs struggle to identify mistakes independently. They are often capable of correcting their errors when the errors are explicitly pointed out, but struggle to identify these errors themselves. Moreover, these models can be easily swayed by feedback, which might hint at a fundamental deficit in their ability to self-correct.
+Recent results suggest that while LLMs are fairly good at correcting several reasoning tasks, they struggle to identify mistakes in mathematical reasoning. Intrestingly, they are often capable of correcting their errors when the errors are explicitly pointed out, but struggle to identify these errors themselves. Thus the question arises: why do these models struggle to find their own mistakes?
 
-The popular method of human feedback—where human quality assessments of AI outputs act as a reward signal to optimize model performance—has been effective in mitigating some of these issues. However, given the massive compute requirements for training powerful models and the cost of collecting human feedback, it’s not a sustainable solution.
+## Base Models are Overconfident
 
-To address this, researchers have been developing augmentation techniques to reduce the reasoning errors of AI models. One of the key techniques explored is self-correction.
+We begin our investigation with LLaMa-2 7B. Due to the sensitivity of model performance to specific prompts, we tried a wide range of prompts across three categories:
+ - **Confidence**: We asked the model to evaluate it's confidence the given solution was correct.
+ - **Mistake**: We asked the model to find mistakes in the solutions.
+ - **Check**: We asked the model to double check all of the calculations.
+
+Additionally, we tried several different rating scales
+ - **Percent**: the models rates its confidence in the correctness of the solution on a scale from 0 to 100\%
+ - **Rating**: the model rates the accuracy of the solution on a scale from 1-5
+ - **Correctness**: the model outputs ``correct'' or ``incorrect.''
+ - **Confidence Level**: the model outputs its confidence as one of "very confident," "confident", "somewhat confident", "not very confident", or "not confident"
+
+We found that there was not a massive difference in performance between the four different scales. It is important to note that we rescaled each of the rating scales to be between 0 and 100 so it was easier to compare between the prompts. 
+
+
+
+
+<!-- Recent results suggest that LLMs struggle to identify mistakes independently. They are often capable of correcting their errors when the errors are explicitly pointed out, but struggle to identify these errors themselves. Moreover, these models can be easily swayed by feedback, which might hint at a fundamental deficit in their ability to self-correct. -->
+
+<!-- The popular method of human feedback—where human quality assessments of AI outputs act as a reward signal to optimize model performance—has been effective in mitigating some of these issues. However, given the massive compute requirements for training powerful models and the cost of collecting human feedback, it’s not a sustainable solution. -->
+
+<!-- To address this, researchers have been developing augmentation techniques to reduce the reasoning errors of AI models. One of the key techniques explored is self-correction. -->
 
 ## Uncovering the Limitations
 
