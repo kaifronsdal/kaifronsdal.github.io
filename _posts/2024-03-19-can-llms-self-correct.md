@@ -80,9 +80,9 @@ In the left plot we see the kinds of errors the model hallucinates when evaluati
 
 The model is _worse_ at correcting calculation errors than reasoning errors
 
- - For a <span style="color: #6aa84f">**correct**</span> ground truth answer
+ - For a **<span style="color: #6aa84f">correct</span>** ground truth answer
     - More likely to erroneously identify a calculation mistake (40%) than a reasoning mistake (20%)
- - For an <span style="color: #cc0000">**incorrect**</span> ground truth answer
+ - For an **<span style="color: #cc0000">incorrect</span>** ground truth answer
     - More likely to catch a reasoning error (65%) than a calculation error (30%)
 
 We had expected asking the model to double check the calculations to improve the models ability to find calculation errors, but we did not find this in practice. This also explains why previous works have found external feedback (such as a code interpreter [^5][^6]) to dramatically improve smaller models self-correction.
