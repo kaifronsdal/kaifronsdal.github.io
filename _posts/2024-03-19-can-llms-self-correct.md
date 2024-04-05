@@ -45,7 +45,7 @@ We begin our investigation with LLaMa-2 7B and evaluate on the GSM8K and Hendryc
  - **Check**: We asked the model to double check all of the calculations.
 
 Additionally, we tried several different rating scales
- - **Percent**: the models rates its confidence in the correctness of the solution on a scale from 0 to 100\%
+ - **Percent**: the models rates its confidence in the correctness of the solution on a scale from 0 to 100%
  - **Rating**: the model rates the accuracy of the solution on a scale from 1-5
  - **Correctness**: the model outputs "correct" or "incorrect."
  - **Confidence Level**: the model outputs its confidence as one of "very confident," "confident", "somewhat confident", "not very confident", or "not confident"
