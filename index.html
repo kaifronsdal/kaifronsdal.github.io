@@ -3,6 +3,12 @@ layout: default
 title: Home
 ---
 
+<div class="about">
+  <!-- Show about.md -->
+  {% capture about_content %}{% include about.md %}{% endcapture %}
+  {{ about_content | markdownify }}
+</div>
+
 <div class="posts">
   {% for post in paginator.posts %}
   <div class="post">
