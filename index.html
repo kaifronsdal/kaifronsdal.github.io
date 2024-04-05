@@ -7,7 +7,7 @@ hello
 
 <div class="about">
   <!-- Show about.md -->
-  {% include about.md %}
+  {% include_relative about.md | markdownify %}
 </div>
 
 <div class="posts">
@@ -15,7 +15,7 @@ hello
   <div class="post">
     <h1 class="post-title">
       <a href="{{ post.url | absolute_url }}">
-        {{ post.title }}
+        hello {{ post.title }}
       </a>
     </h1>
 
