@@ -3,10 +3,11 @@ layout: default
 title: Home
 ---
 
+hello
+
 <div class="about">
   <!-- Show about.md -->
-  {% capture about_content %}{% include about.md %}{% endcapture %}
-  {{ about_content | markdownify }}
+  {% include about.md %}
 </div>
 
 <div class="posts">
