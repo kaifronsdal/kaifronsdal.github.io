@@ -5,9 +5,9 @@ title: Home
 
 <div class="about">
   <!-- Show about.md -->
-  <!-- {% include_relative about.md %} -->
-  {% capture my_include %}{% include about.md %}{% endcapture %}
-  {{ my_include | markdownify }}
+  {% include_relative about.md | markdownify %}
+  <!-- {% capture my_include %}{% include about.md %}{% endcapture %}
+  {{ my_include | markdownify }} -->
 
 </div>
 
