@@ -6,6 +6,7 @@ title: Can AI Self-Correct? Analyzing the Limitations of Large Language Models
 _This post is a summary of [this](/writing/CS224N__Project_Final_Report.pdf) research paper writen as a final project for Stanford's CS 224N and Intro to AI Alignment classes._
 
 As models become more and more powerful, they have started to approach or exceed human-level performance on a variety of tasks. In order to train these models, researchers have been using increasingly large datasets and more compute. However, as these model approach human limits, it becomes harder and harder to improve them from human feedback.
+<!--more-->
 
 The natural solution is to replace the human feedback with model feedback; that is, to have the model evaluate its own outputs and make necessary amendments. There are several varients to this process, including RLAIF[^0] and Constitutional AI[^3], but the basic idea follows the following abstract process:
 
