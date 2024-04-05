@@ -3,11 +3,12 @@ layout: default
 title: Home
 ---
 
-hello
-
 <div class="about">
   <!-- Show about.md -->
-  {% include_relative about.md %}
+  <!-- {% include_relative about.md %} -->
+  {% capture my_include %}{% include about.md %}{% endcapture %}
+  {{ my_include | markdownify }}
+
 </div>
 
 <div class="posts">
@@ -15,7 +16,7 @@ hello
   <div class="post">
     <h1 class="post-title">
       <a href="{{ post.url | absolute_url }}">
-        hello {{ post.title }}
+        {{ post.title }}
       </a>
     </h1>
 
