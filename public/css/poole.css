@@ -394,11 +394,7 @@ tbody tr:nth-child(odd) th {
   text-align: center;
 }
 
-.pagination .article-pagination {
-  display: table;
-  width: 100%;
-  margin-top: -15px; }
-.pagination .article-pagination a {
+.pagination a {
   display: inline-block;
   padding-top: 6px;
   font-size: 11px;
@@ -408,15 +404,15 @@ tbody tr:nth-child(odd) th {
   text-decoration: none;
   text-transform: uppercase;
   transition: color 0.2s linear; }
-.pagination .article-pagination a svg {
+.pagination a svg {
   width: 16px;
   height: 16px;
   vertical-align: middle;
   margin: -2px 8px 0 8px;
   fill: #888181; }
-.pagination .article-pagination a:hover svg {
+.pagination a:hover svg {
   fill: #121111; }
-.pagination .article-pagination a:hover {
+.pagination a:hover {
   color: #121111; }
 
 /* Pagination items can be `span`s or `a`s */
