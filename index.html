@@ -20,7 +20,7 @@ title: Home
 </div>
 
 <div class="pagination">
-  {% if paginator.next_page %}
+  <!-- {% if paginator.next_page %}
     <a class="pagination-item older" href="{{ paginator.next_page_path | absolute_url }}">Older</a>
   {% else %}
     <span class="pagination-item older">Older</span>
@@ -33,5 +33,29 @@ title: Home
     {% endif %}
   {% else %}
     <span class="pagination-item newer">Newer</span>
+  {% endif %} -->
+  {% if paginator.next_page %}
+    <a class="article-pagination-left" href="{{ paginator.next_page_path | absolute_url }}">{% include svg-icon.html icon="arrow-left" %} Older posts</a>
+  {% else %}
+    <span class="article-pagination-left">{% include svg-icon.html icon="arrow-left" %} Older posts</span>
   {% endif %}
+  {% if paginator.previous_page %}
+    {% if paginator.page == 2 %}
+      <a class="article-pagination-right" href="{{ '/' | absolute_url }}">Newer posts {% include svg-icon.html icon="arrow-right" %}</a>
+    {% else %}
+      <a class="article-pagination-right" href="{{ paginator.previous_page_path | absolute_url }}">Newer posts {% include svg-icon.html icon="arrow-right" %}</a>
+    {% endif %}
+  {% else %}
+    <span class="article-pagination-right">Newer</span>
+  {% endif %}
+  <!-- {% if paginator.total_pages > 1 %}
+    <li class="article-pagination {% if site.settings.scrollappear_enabled %}scrollappear{% endif %}">
+      {% if paginator.next_page %}
+        <a href="{{ paginator.next_page_path }}" class="article-pagination-left">{% include svg-icon.html icon="arrow-left" %} Older posts</a>
+      {% endif %}
+      {% if paginator.previous_page %}
+        <a href="{{ paginator.previous_page_path }}" class="article-pagination-right">Newer posts {% include svg-icon.html icon="arrow-right" %}</a>
+      {% endif %}
+    </li>
+  {% endif %} -->
 </div>
