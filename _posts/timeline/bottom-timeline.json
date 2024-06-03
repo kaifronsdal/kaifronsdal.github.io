@@ -1,0 +1,75 @@
+{
+    "title": {
+        "text": {
+          "headline": "",
+          "text": "...and see how they have transformed into powerful tools used in various fields today. From early gambles to contemporary data science, uncover the stories behind the numbers and their role in shaping our understanding of the world."
+        },
+        "background": {
+          "url": "./media/row-2-column-1(1).png",
+          "alt": "http://ism.uqam.ca/~ism/academics/probability-theory-and-applications/"
+        },
+        "unique_id": "moments-of-uncertainty"
+    },
+    "events": [
+      {
+        "media": {
+          "url": "./media/PHOTON EMISSION TOMOGRAPHY.png",
+          "caption": "Reconstruction of an isotope intensity function.",
+          "credit": "Geman S., McClure D. <i>Bayesian image analysis: An application to single photon emission.</i> Amer. Statist. Assoc. 1985 :12–18"
+        },
+        "start_date": {
+          "year": "1985"
+        },
+        "text": {
+          "headline": "Maximum a Posteriori Estimation and SPET",
+          "text": "<p>In Bayesian statistics, a maximum a posteriori probability (MAP) estimate is an estimate of an unknown quantity, that equals the mode of the posterior distribution. Around 1985, the first Single-Photon Emission computed Tomography methods were developed. The MAP can be used to obtain a point estimate of an unobserved quantity on the basis of empirical data. It the the basis of some of the first 3D imaging techniques and was used to reconstruct a 3D image from a series of 2D photon emmissions.</p>"
+        },
+        "unique_id": "thucydides"
+      },
+      {
+        "media": {
+          "url": "./media/1936.png",
+          "caption": "Franklin D. Roosevelt and Alf Landon",
+          "credit": "https://en.wikipedia.org/wiki/1936_United_States_presidential_election"
+        },
+        "start_date": {
+          "year": "1936"
+        },
+        "text": {
+          "headline": "Statistical Sampling Gone Awry",
+          "text": "<p>1936 poll conducted by the then popular magazine Literary Digest to predict whether the incumbent Democratic president Franklin D. Roosevelt or Alfred Landon, the Republican candidate, would win the presidential election. The Literary Digest asked 10 million people and received answers from over 2 million, by far the largest poll conducted to date. The poll predicted a landslide victory for Alfred Landon.<br>The actual results were 62% for Roosevelt versus 38% for Landon. The 2 million strong Literary Digest sample was not a random subsample and in fact the readers who responded leaned Republican. This is one of the first major examples of poor sampling leading to incorrect predictions.<br>Peverille Squire. <i>Why the 1936 literary digest poll failed</i>, Public Opinion Quarterly, 1988, 52, 125:133.</p>"
+        },
+        "unique_id": "trial-of-the-pyx"
+      },
+      {
+        "media": {
+          "url": "./media/Galton2-772x1030.jpg",
+          "caption": "The game of Plinko exhibits the central limit theorem.",
+          "credit": "https://demos.swarthmore.edu/physics/tag/plinko/"
+        },
+        "start_date": {
+          "year": "1887"
+        },
+        "text": {
+          "headline": "Central Limit Theorem",
+          "text": "<p>In 1887, Chebyshev published an article with a version of the central limit theorem. This was the first modern interpretation of the CLT with a rigorous proof. The CLT has applications everywhere. Calculating the trajecotry of comets, the problem of foundation method of least squares, the problem of risk in the game of chance"
+        },
+        "unique_id": "the-mean"
+      },
+      {
+        "media": {
+          "url": "./media/us_income.png",
+          "caption": "Average income—which heavily weights extremely high-income families—substantially exceeds median income (families in the fiftieth percentile)",
+          "credit": "https://en.wikipedia.org/wiki/Household_income_in_the_United_States#Mean_vs._median_household_income"
+        },
+        "start_date": {
+          "year": "2018"
+        },
+        "text": {
+          "headline": "The US Census",
+          "text": "<p>The U.S. median household income in 2018 was $61,937. The US Census Bureau collects data on the US population every 10 years. The data is used to determine the number of seats each state has in the US House of Representatives and to distribute billions in federal funds to local communities. A key measure of household income is the median income, at which half of households have income above that level and half below. The mean income is the average income of all households. The mean income is higher than the median income because it is heavily influenced by the incomes of the highest earners. The median income is a better measure of the typical income of households in the US.</p>"
+        },
+        "unique_id": "the-median"
+      }
+    ]
+}

@@ -1,0 +1,73 @@
+{
+    "title": {
+        "text": {
+          "headline": "Moments of Uncertainty",
+          "text": "The development of modern statistical thinking. We trace the evolution of statistical thinking from its earliest days to its current applications. Explore how moments of doubt and inquiry led to groundbreaking discoveries in probability and data analysis. We'll delve into the origins of statistical concepts..."
+        },
+        "background": {
+          "url": "./media/row-1-column-1(1).png",
+          "alt": "http://ism.uqam.ca/~ism/academics/probability-theory-and-applications/"
+        },
+        "unique_id": "moments-of-uncertainty"
+    },
+    "events": [
+      {
+        "media": {
+          "url": "./media/2560px-PLATEAS.jpg",
+          "caption": "The remains of the walls of Platea.",
+          "credit": "https://en.wikipedia.org/wiki/Plataea#/media/File:PLATEAS.jpg"
+        },
+        "start_date": {
+          "year": "-500"
+        },
+        "text": {
+          "headline": "The Seige of Platea",
+          "text": "<p>The historian Thucydides in his <i>History of the Peloponnesian War</i> describes the first recorded use of the mode to reduce uncertainty in a statistical estimate. <br> The Peloponnesian War saw the Peloponnesians besiege Plataea. After their initial attacks failed, the Peloponnesians built a wall around the city to starve the Plataeans into surrender.<br>The Plataeans, running out of food, devised a plan to escape over the enemy's walls. In order to make ladders tall enough, they meticulously calculated the height of the wall by counting the layers of bricks over and over again with many different people, assuming that the majority of the counts would be correct. Under the cover of a stormy night, they scaled the wall and made their way to Athens, with most of the escapees reaching safety.<br>This siege is notable for the Plataeans' innovative escape plan, which involved the careful calculation of the wall's height by counting bricks to ensure the correct length of their ladders. This resourceful approach highlights the importance of reducing uncertainty in estimates, a principle still relevant today.</p>"
+        },
+        "unique_id": "thucydides"
+      },
+      {
+        "media": {
+          "url": "./media/trail_pyx.jpg",
+          "caption": "Trial of the Pyx 6 December 1854, Illustrated London News",
+          "credit": "https://www.royalmintmuseum.org.uk/journal/history/trial-of-the-pyx/"
+        },
+        "start_date": {
+          "year": "1100"
+        },
+        "text": {
+          "headline": "The Trial of the Pyx",
+          "text": "<p>The Trial of the Pyx, first held in the 12th century, is a judicial ceremony in the UK that tests whether newly minted coins are of appopriate dimensions. According to The Dialogus de Scaccario (a medeival English treatise), a 'Master of the Mint' would put aside one coin per ten pounds of new silver. Every three months, a random sample of these coins would be tested against official weight and quality standards.</p>"
+        },
+        "unique_id": "trial-of-the-pyx"
+      },
+      {
+        "media": {
+          "url": "./media/KoebelJ.jpg",
+          "caption": "Köbel in 1532"
+        },
+        "start_date": {
+          "year": "1500"
+        },
+        "text": {
+          "headline": "The Mean",
+          "text": "<p>For a very long time, the concept of a statistical average was not widely accepted by scientists. The prevailing method at the time was to select the most accurate measurement as the most reliable estimate. Combining multiple measurements, especially across different objects, was seen as counterintuitive and illogical.. Although the idea of the arithmetic mean was used by Ancient Greeks, the generalization of this method to more than two data points was first recorded in the 1500s when Jakob Köbel makes use of an average implicitly in his definition of a 16-foot rod followed by Tycho Brahe, a Danish astronomer, who used it to help minimize errors in his calcuations regarding the locations of celestial bodies.</p>"
+        },
+        "unique_id": "the-mean"
+      },
+      {
+        "media": {
+          "url": "./media/Certaine Errors in Navigation.jpg",
+          "caption": "Excerpt from Edward Wright's Certaine Errors in Navigation"
+        },
+        "start_date": {
+          "year": "1599"
+        },
+        "text": {
+          "headline": "The Median",
+          "text": "<p>The concept of the 'median' was first recorded in 1599, in the publication of 'Certaine Errors in Navigation,' a book on navigation by mathematical Edward Wright. In this book, Edward argued that the median was the 'most correct' observation in a dataset.</p>"
+        },
+        "unique_id": "the-median"
+      }
+    ]
+}

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en"><!--
+  	 
+  	88888888888 d8b                        888 d8b                888888   d8888b  
+  	    888     Y8P                        888 Y8P                   88b d88P  Y88b 
+  	    888                                888                       888 Y88b
+  	    888     888 88888b d88b     d88b   888 888 88888b     d88b   888   Y888b
+  	    888     888 888  888  88b d8P  Y8b 888 888 888  88b d8P  Y8b 888      Y88b
+  	    888     888 888  888  888 88888888 888 888 888  888 88888888 888        888 
+  	    888     888 888  888  888 Y8b      888 888 888  888 Y8b      88P Y88b  d88P 
+  	    888     888 888  888  888   Y8888  888 888 888  888   Y8888  888   Y8888P
+  	                                                                d88P            
+  	                                                              d88P             
+  	                                                            888P              
+  	 -->
+  <head>
+    <title>Moments of Uncertainty</title>
+    <meta name="description" content="Houston’s voice caught the imagination of the world propelling her to superstardom at an early age becoming one of the most awarded performers of our time.">
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1,width=device-width">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <!-- Style-->
+    <style>
+        html, body {
+            height:100%;
+            padding: 0px;
+            margin: 0px;
+        }
+
+        .tl-attribution {
+            display: none;
+        }
+
+        #top-timeline-embed #moments-of-uncertainty .tl-slide-background {
+            background-repeat: no-repeat;
+            background-position: center bottom;
+        }
+
+        #top-timeline-embed #moments-of-uncertainty .tl-text-content p::before {
+            background-image: url("./media/row-1-column-1.png");
+            background-position: center bottom;
+            mix-blend-mode: difference;
+        }
+
+        #bottom-timeline-embed #moments-of-uncertainty .tl-slide-background {
+            background-repeat: no-repeat;
+            background-position: center top;
+        }
+    </style>
+	<link rel="shortcut icon" href="https://cdn.knightlab.com/libs/blueline/latest/assets/logos/favicon.ico"> 
+  </head>
+  <body>
+        <!-- Demo -->
+        <div id="top-timeline-embed", style="height: 50%">
+            <div id="timeline"></div>
+        </div>
+        <div id="bottom-timeline-embed", style="height: 50%">
+            <div id="timeline"></div>
+        </div>
+        <!-- build:css //cdn.knightlab.com/libs/timeline3/%(cdn)s/css/timeline.css -->
+        <link rel="stylesheet" href="./css/fonts/font.knightlab.css">
+        <!-- endbuild -->
+        <!-- build:css //cdn.knightlab.com/libs/timeline3/%(cdn)s/css/timeline.css -->
+        <link title="timeline-styles" rel="stylesheet" href="./css/timeline.css">
+        <!-- endbuild -->
+        <!-- build:js //cdn.knightlab.com/libs/timeline3/%(cdn)s/js/timeline-min.js -->
+        <script src="./js/timeline.js"></script>
+        <!-- endbuild -->
+        <script>
+            $(document).ready(function() {
+                var topAdditionalOptions = {
+                    hash_bookmark: false,
+                    timenav_height_percentage: 15,
+                    timenav_height_min: 100,
+                    timenav_position: 'top',
+                    // set to 50% of the screen height
+                    // getComputedStyle returns a string like "100px"
+                    // height: parseInt(getComputedStyle(document.body).height) * 0.5,
+                };
+
+                var bottomAdditionalOptions = {
+                    hash_bookmark: false,
+                    timenav_height_percentage: 15,
+                    timenav_height_min: 100,
+                    timenav_position: 'bottom',
+                };
+
+                // var embed = document.getElementById('top-timeline-embed');
+                // embed.style.height = '50%';
+                window.top_timeline = new TL.Timeline('top-timeline-embed',
+                    './top-timeline.json',
+                    topAdditionalOptions
+                );
+                window.top_timeline._el.menubar.offsetHeight = 30;
+
+                window.bottom_timeline = new TL.Timeline('bottom-timeline-embed',
+                    './bottom-timeline.json',
+                    bottomAdditionalOptions
+                );
+                
+                // wait until top and bottom are ready
+                top_ready = false;
+                bottom_ready = false;
+
+                window.top_timeline.on('ready', function() {
+                    console.log('top ready');
+                    top_ready = true;
+                    if (bottom_ready) {
+                        init_event_pairings();
+                    }
+                });
+
+                window.bottom_timeline.on('ready', function() {
+                    console.log('bottom ready');
+                    bottom_ready = true;
+                    if (top_ready) {
+                        init_event_pairings();
+                    }
+                });
+
+                function init_event_pairings() {
+                    // maps from top events to bottom events
+                    top_events = Object.keys(window.top_timeline.config.event_dict)
+                    bottom_events = Object.keys(window.bottom_timeline.config.event_dict)
+
+                    top_map = {}
+                    for (var i = 0; i < top_events.length; i++) {
+                        top_map[top_events[i]] = bottom_events[top_events.length - i - 1];
+                    }
+                    bottom_map = {}
+                    for (var key in top_map) {
+                        bottom_map[top_map[key]] = key;
+                    }
+
+                    console.log(top_map);
+                }
+                
+
+                window.top_timeline.on('change', function(e) {
+                    console.log(e);
+                    window.bottom_timeline.goToId(e.unique_id);
+                });
+
+                window.bottom_timeline.on('change', function(e) {
+                    console.log(e);
+                    window.top_timeline.goToId(e.unique_id);
+                });
+
+                // window.addEventListener('resize', function() {
+                //     console.log('resize');
+                //     var embed = document.getElementById('top-timeline-embed');
+                //     console.log(parseInt(getComputedStyle(document.body).height) * 0.5);
+                //     embed.style.height = parseInt(getComputedStyle(document.body).height) * 0.5;
+                //     timeline.updateDisplay();
+                // })
+            });
+        </script>
+  </body>
+</html>
