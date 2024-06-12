@@ -51,6 +51,7 @@
           "year": "900"
         },
         "text": {
+          "headline": "Frequency Analysis",
           "text": "<p>In the 9th century, a significant milestone in the field of cryptography was achieved by the renowned Arab polymath,<br>Al-Kindi. His groundbreaking work in cryptanalysis, the study of breaking codes and ciphers, revolutionized the way encrypted messages were deciphered. Al-Kindi's ingenuity led to the development of the first known code-breaking algorithm and the pioneering use of frequency analysis.<br>Al-Kindi's magnum opus in this field, titled 'On Deciphering Cryptographic Messages' (Risala fi Istikhraj al-Kutub al-Mu'amma), provided a comprehensive and detailed exploration of statistics and cryptanalysis. This work established a framework for understanding the statistical properties of language and their application to code-breaking.<br>Frequency analysis, a technique that Al-Kindi is credited with developing, involves analyzing the frequency with which different letters or symbols appear in an encrypted message. By comparing these frequencies to the expected frequencies in the language of the original message, patterns can be identified that reveal the underlying code. This method proved to be a powerful tool for deciphering substitution ciphers, where each letter is replaced with another.<br><br>Singh, Simon (2000). <it>The Code Book</i>. New York City: Anchor Books. pp. 14–20</p>"
         },
         "unique_id": "frequency-analysis"
