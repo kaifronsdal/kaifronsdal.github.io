@@ -142,6 +142,21 @@
           "text": "<p>In 1713, eight years after his death, the seminal work of Jacob Bernoulli, 'Ars Conjectandi' (The Art of Conjecturing), was posthumously published. This influential book solidified Bernoulli's position as a pioneer in the field of probability theory and introduced a groundbreaking concept known as the law of large numbers.<br>'Ars Conjectandi' was a culmination of Bernoulli's lifelong study of probability and combinatorics. It compiled and expanded upon earlier works by mathematicians such as Christiaan Huygens, Gerolamo Cardano, Pierre de Fermat, and Blaise Pascal, incorporating their insights into a unified framework.<br>The law of large numbers states that as the number of trials or observations of a random event increases, the observed average of the outcomes will tend to converge towards the expected value. In simpler terms, the more times you flip a coin, the closer the proportion of heads and tails will get to 50/50.</p>"
         },
         "unique_id": "the-law-of-large-numbers"
+      },
+      {
+        "media": {
+          "url": "./media/ceres.jpg",
+          "caption": "Friedrich's sketch of the orbits of the Ceres and Pallas.",
+          "credit": "Skizze der Bahnen der Kleinplaneten Ceres, Pallas und Vesta. “Astronomische Untersuchen und Rechnungen vornehmlich ber die Ceres Ferdinandea,” 1802. SUB G¨ottingen: Cod. Ms. Gauß Handbuch 4, Bl. 1."
+        },
+        "start_date": {
+          "year": "1801"
+        },
+        "text": {
+          "headline": "Least Squares",
+          "text": "<p>n 1801, a remarkable feat of mathematical and astronomical ingenuity took place when Carl Friedrich Gauss, a young German mathematician, successfully predicted the orbit of the dwarf planet Ceres. Ceres had been briefly observed by Italian astronomer Giuseppe Piazzi before disappearing behind the sun, leaving astronomers puzzled about its trajectory.<br>Gauss, using only a limited set of observational data, applied a novel approach to determine Ceres' orbit. He employed a method known as the line of best fit, a statistical technique that involves finding a straight line that minimizes the overall distance between the line and a set of data points. By applying this method to the available observations of Ceres, Gauss was able to accurately predict its future position, leading to its rediscovery by other astronomers later that year.<br>Five years later, in 1805, French mathematician Adrien-Marie Legendre introduced a more refined method for fitting curves to data, known as the method of least squares. This technique generalizes the concept of the line of best fit to curves of any shape, allowing for more accurate modeling of complex phenomena.</p>"
+        },
+        "unique_id": "least-squares"
       }
     ]
 }

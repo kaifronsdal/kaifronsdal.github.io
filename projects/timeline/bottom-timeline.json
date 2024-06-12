@@ -36,6 +36,7 @@
           "year": "1932"
         },
         "text": {
+          "headline": "Permutations and Combinations and the Enigma Machine",
           "text": "<p> In the realm of cryptanalysis, the study of breaking codes and ciphers, permutations, a mathematical concept dealing with the arrangement of objects, played a pivotal role in deciphering the original version of the Enigma machine. This cipher device, employed by Nazi Germany during World War II, was considered unbreakable due to its complex encryption mechanism. However, the ingenuity of Polish mathematician and cryptologist Marian Rejewski, along with his colleagues, proved otherwise.<br>Rejewski's breakthrough came in the early 1930s when he leveraged a fundamental property of permutations: two permutations are conjugate if and only if they have the same cycle type. This property, seemingly abstract, had a profound impact on the cryptanalysis of the Enigma machine.<br>The Enigma machine's encryption process involved a series of rotors that permuted the letters of the alphabet. Each rotor's wiring represented a permutation, and the combined effect of multiple rotors created a complex permutation that scrambled the plaintext into ciphertext. However, on 1 May 1937, the Germans changed the Enigma design to get rid of this flaw.<br><br>Kozaczuk, Władysław (1984), Enigma: How the German Machine Cipher was Broken, and how it was Read by the Allies in World War Two, edited and translated by Christopher Kasparek (2 ed.), Frederick, Maryland: University Publications of America.</p>"
         },
         "unique_id": "permutations-and-combinations"
@@ -143,6 +144,21 @@
           "text": "<p>Plinko, one of the most iconic and thrilling pricing games on 'The Price Is Right,' made its debut on January 3, 1983. Created by the show's producer Frank Wayne, Plinko quickly became a fan favorite due to its unique blend of chance and strategy. The game involves contestants earning up to five Plinko chips through an initial pricing game, after which they drop these chips down a large vertical pegboard. As the chips descend, they bounce unpredictably off a series of pegs, adding to the suspense as they move horizontally and vertically toward one of the prize slots at the bottom. Each slot has a different monetary value, and the potential to win up to $50,000 has made Plinko one of the most exciting and beloved segments on 'The Price Is Right.'<br>Plinko's gameplay provides an intriguing real-world example of the central limit theorem (a later generalization of the law of large numbers) in action. The law of large numbers is a fundamental principle in probability theory that states that as the number of trials increases, the average result will converge to the expected value. In the context of Plinko, each chip's path down the pegboard is highly unpredictable due to the numerous collisions with pegs, resulting in a wide range of possible outcomes. However, if a large number of Plinko chips were dropped, the distribution of chips across the prize slots would begin to approximate the underlying probabilities dictated by the design of the board.</p>"
         },
         "unique_id": "the-law-of-large-numbers"
+      },
+      {
+        "media": {
+          "url": "./media/nasa.png",
+          "caption": "A daigram from the technical report showcasing the coordinate system used for the least squares adjustment of satellite observations.",
+          "credit": "https://ntrs.nasa.gov/api/citations/19680009294/downloads/19680009294.pdf"
+        },
+        "start_date": {
+          "year": "1967"
+        },
+        "text": {
+          "headline": "Least Squares Adjustment of Satellite Observations",
+          "text": "<p>In 1967, NASA published 'Least Squares Adjustment of Satellite Observations for Simultaneous Directions or Ranges,' a seminal work that leveraged the method of least squares for precise satellite tracking and orbit determination. This marked a significant advancement in the application of least squares to modern technology and space exploration as the computations were too large to complete by hand and required a computer.<br>The report detailed the mathematical formulation and computer programs necessary for the rigorous least squares adjustment of satellite observations, utilizing either simultaneous direction measurements or range measurements. This methodology enabled the accurate determination of satellite positions and velocities, essential for various space missions, including navigation, communication, and scientific research.<br><br>GPS Satellite Surveying, 4th Edition by Alfred Leick, Lev Rapoport, Dmitry Tatarnikov</p>"
+        },
+        "unique_id": "least-squares"
       }
     ]
 }
