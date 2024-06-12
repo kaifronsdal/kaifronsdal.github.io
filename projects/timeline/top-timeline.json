@@ -28,6 +28,35 @@
       },
       {
         "media": {
+          "url": "./media/al-Khalil.jpg",
+          "caption": "Al-Khalil ibn Ahmad al-Farahidi",
+          "credit": "https://en.wikipedia.org/wiki/Al-Khalil_ibn_Ahmad_al-Farahidi"
+        },
+        "start_date": {
+          "year": "700"
+        },
+        "text": {
+          "headline": "The Book of Cryptographic Messages",
+          "text": "<p>In the 8th century, a significant advancement in the field of cryptography emerged from the Arab world. Al-Khalil ibn Ahmad al-Farahidi, a renowned Arab philologist, lexicographer, and mathematician, authored a groundbreaking work titled 'Book of Cryptographic Messages' (Kitab al-Mu'amma). While the original manuscript has unfortunately been lost to time, its profound impact on the development of cryptography is evident through the references and accounts of subsequent scholars.<br>Al-Khalil's 'Book of Cryptographic Messages' is celebrated for its pioneering use of permutations and combinations, a mathematical concept that underpins the analysis of possible arrangements of objects. In the context of cryptography, this innovation allowed Al-Khalil to systematically enumerate all possible Arabic words, both with and without vowels. This approach was a significant departure from previous cryptographic methods and laid the groundwork for more sophisticated encryption techniques.<br><br> Broemeling, Lyle D. (1 November 2011). <i>An Account of Early Statistical Inference in Arab Cryptology</i>. The American Statistician. 65 (4): 255–257. doi:10.1198/tas.2011.10191</p>"
+        },
+        "unique_id": "permutations-and-combinations"
+      },
+      {
+        "media": {
+          "url": "./media/Al-kindi_cryptographic.png",
+          "caption": "The first page of al-Kindi's manuscript 'On Deciphering Cryptographic Messages'",
+          "credit": "https://commons.wikimedia.org/wiki/File:Al-kindi_cryptographic.png"
+        },
+        "start_date": {
+          "year": "900"
+        },
+        "text": {
+          "text": "<p>In the 9th century, a significant milestone in the field of cryptography was achieved by the renowned Arab polymath,<br>Al-Kindi. His groundbreaking work in cryptanalysis, the study of breaking codes and ciphers, revolutionized the way encrypted messages were deciphered. Al-Kindi's ingenuity led to the development of the first known code-breaking algorithm and the pioneering use of frequency analysis.<br>Al-Kindi's magnum opus in this field, titled 'On Deciphering Cryptographic Messages' (Risala fi Istikhraj al-Kutub al-Mu'amma), provided a comprehensive and detailed exploration of statistics and cryptanalysis. This work established a framework for understanding the statistical properties of language and their application to code-breaking.<br>Frequency analysis, a technique that Al-Kindi is credited with developing, involves analyzing the frequency with which different letters or symbols appear in an encrypted message. By comparing these frequencies to the expected frequencies in the language of the original message, patterns can be identified that reveal the underlying code. This method proved to be a powerful tool for deciphering substitution ciphers, where each letter is replaced with another.<br><br>Singh, Simon (2000). <it>The Code Book</i>. New York City: Anchor Books. pp. 14–20</p>"
+        },
+        "unique_id": "frequency-analysis"
+      },
+      {
+        "media": {
           "url": "./media/trail_pyx.jpg",
           "caption": "Trial of the Pyx 6 December 1854, Illustrated London News",
           "credit": "https://www.royalmintmuseum.org.uk/journal/history/trial-of-the-pyx/"
@@ -68,6 +97,51 @@
           "text": "<p>The concept of the 'median' was first recorded in 1599, in the publication of 'Certaine Errors in Navigation,' a book on navigation by mathematical Edward Wright. In this book, Edward argued that the median was the 'most correct' observation in a dataset.</p>"
         },
         "unique_id": "the-median"
+      },
+      {
+        "media": {
+          "url": ".media/Blaise_Pascal_Versailles.JPG",
+          "caption": "Blaise Pascal",
+          "credit": "https://en.wikipedia.org/wiki/Blaise_Pascal"
+        },
+        "start_date": {
+          "year": "1654"
+        },
+        "text": {
+          "headline": "Probability Theory",
+          "text": "<p>In 1654, a pivotal moment in the history of mathematics occurred as two brilliant minds, Blaise Pascal and Pierre de Fermat, engaged in a series of correspondences that would lay the foundation for the mathematical theory of probability. Their collaboration, sparked by a gambling problem, called the division of the stakes, posed by a French nobleman, Chevalier de Méré, led to groundbreaking insights into the nature of chance and uncertainty.<br>The problem that ignited their intellectual exchange involved the fair division of stakes in an unfinished game of chance. Through their letters, Pascal and Fermat developed a systematic approach to analyzing such problems, introducing concepts such as expected value and probability distributions. They tackled questions like calculating the odds of winning a specific number of coin tosses or rolling a particular number on a die.</p>"
+        },
+        "unique_id": "probability-theory"
+      },
+      {
+        "media": {
+          "url": "./media/Sex_ratio_total_population_per_country_.png",
+          "caption": "Sex ratio by country for total population. Blue represents more men and boys, red more women and girls than the world average of 1.01 males/female.",
+          "credit": "https://en.wikipedia.org/wiki/Human_sex_ratio"
+        },
+        "start_date": {
+          "year": "1710"
+        },
+        "text": {
+          "headline": "The <i>p</i>-Value",
+          "text": "<p>One of the first appearances of what is now known as the <i>p</i>-value was in 1710, when Scottish physician John Arbuthnot studied the human sex ratio. After realizing that the number of males born in London exceeded that of females born for 82 years in a row (1629 - 1710), he calculated that the probability of this naturally occurring was 1 in 4,8360,0000,0000,0000,0000,0000. This was the first recorded use of the  <i>p</i>-value, a measure of the strength of evidence against the null hypothesis. The  <i>p</i>-value is a crucial concept in hypothesis testing and statistical inference, providing a quantitative assessment of the likelihood of observing a particular result under the assumption that the null hypothesis is true. Arbuthnot's pioneering work laid the groundwork for the development of statistical hypothesis testing and the  <i>p</i>-value as a key tool in scientific research.</p>"
+        },
+        "unique_id": "the-p-value"
+      },
+      {
+        "media": {
+          "url": "./media/ArsConjectandi.jpg",
+          "caption": "First edition of Bernoulli's Ars Conjectandi",
+          "credit": "PMM 179. DSB II, 50. Dibner 110. Evans 8. Grolier/Horblit 12. Sparrow 21. Norman 216. OCLC 10851120. Goldsmiths'-Kress 05090.0."
+        },
+        "start_date": {
+          "year": "1713"
+        },
+        "text": {
+          "headline": "The Law of Large Numbers",
+          "text": "<p>In 1713, eight years after his death, the seminal work of Jacob Bernoulli, 'Ars Conjectandi' (The Art of Conjecturing), was posthumously published. This influential book solidified Bernoulli's position as a pioneer in the field of probability theory and introduced a groundbreaking concept known as the law of large numbers.<br>'Ars Conjectandi' was a culmination of Bernoulli's lifelong study of probability and combinatorics. It compiled and expanded upon earlier works by mathematicians such as Christiaan Huygens, Gerolamo Cardano, Pierre de Fermat, and Blaise Pascal, incorporating their insights into a unified framework.<br>The law of large numbers states that as the number of trials or observations of a random event increases, the observed average of the outcomes will tend to converge towards the expected value. In simpler terms, the more times you flip a coin, the closer the proportion of heads and tails will get to 50/50.</p>"
+        },
+        "unique_id": "the-law-of-large-numbers"
       }
     ]
 }

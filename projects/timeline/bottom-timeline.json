@@ -28,6 +28,35 @@
       },
       {
         "media": {
+          "url": "./media/440px-EnigmaMachineLabeled.jpg",
+          "caption": "The Enigma machine was a cipher device that was used commercially from the early 1920s and was adopted by the militaries and governments of various countries",
+          "credit": "https://en.wikipedia.org/wiki/Cryptanalysis_of_the_Enigma"
+        },
+        "start_date": {
+          "year": "1932"
+        },
+        "text": {
+          "text": "<p> In the realm of cryptanalysis, the study of breaking codes and ciphers, permutations, a mathematical concept dealing with the arrangement of objects, played a pivotal role in deciphering the original version of the Enigma machine. This cipher device, employed by Nazi Germany during World War II, was considered unbreakable due to its complex encryption mechanism. However, the ingenuity of Polish mathematician and cryptologist Marian Rejewski, along with his colleagues, proved otherwise.<br>Rejewski's breakthrough came in the early 1930s when he leveraged a fundamental property of permutations: two permutations are conjugate if and only if they have the same cycle type. This property, seemingly abstract, had a profound impact on the cryptanalysis of the Enigma machine.<br>The Enigma machine's encryption process involved a series of rotors that permuted the letters of the alphabet. Each rotor's wiring represented a permutation, and the combined effect of multiple rotors created a complex permutation that scrambled the plaintext into ciphertext. However, on 1 May 1937, the Germans changed the Enigma design to get rid of this flaw.<br><br>Kozaczuk, Władysław (1984), Enigma: How the German Machine Cipher was Broken, and how it was Read by the Allies in World War Two, edited and translated by Christopher Kasparek (2 ed.), Frederick, Maryland: University Publications of America.</p>"
+        },
+        "unique_id": "permutations-and-combinations"
+      },
+      {
+        "media": {
+          "url": "./media/Alan_Turing_(1912-1954)_in_1936_at_Prin.jpg",
+          "caption": "Alan Turing, a British mathematician and logician, played a key role in breaking the Enigma code during World War II.",
+          "credit": "https://en.wikipedia.org/wiki/Alan_Turing"
+        },
+        "start_date": {
+          "year": "1939"
+        },
+        "text": {
+          "headline": "Frequency Analysis and the Enigma Machine",
+          "text": "<p>Turing and his team built upon Al-Kindi's frequency analysis principles and applied them to the Enigma machine. They recognized that even with the Enigma's complex rotor system, the underlying frequency patterns of the German language would still be present in the ciphertext. Turing's team identified certain common words and phrases in German military communications, such as 'eins' (one), which were likely to appear frequently in messages. They then used frequency analysis to determine the most likely positions for these words within the ciphertext. This process, known as crib-based decryption, helped them deduce the Enigma machine's settings and decipher the messages.<br><br>'The 1944 Bletchley Park Cryptographic Dictionary'. codesandciphers.org.uk. Retrieved 8 August 2020.</p>"
+        },
+        "unique_id": "frequency-analysis"
+      },
+      {
+        "media": {
           "url": "./media/1936.png",
           "caption": "Franklin D. Roosevelt and Alf Landon",
           "credit": "https://en.wikipedia.org/wiki/1936_United_States_presidential_election"
@@ -70,6 +99,50 @@
           "text": "<p>The U.S. median household income in 2018 was $61,937. The US Census Bureau collects data on the US population every 10 years. The data is used to determine the number of seats each state has in the US House of Representatives and to distribute billions in federal funds to local communities. A key measure of household income is the median income, at which half of households have income above that level and half below. The mean income is the average income of all households. The mean income is higher than the median income because it is heavily influenced by the incomes of the highest earners. The median income is a better measure of the typical income of households in the US.</p>"
         },
         "unique_id": "the-median"
+      },
+      {
+        "media": {
+          "url": "./media/Andrej_Nikolajewitsch_Kolmogorov.jpg",
+          "caption": "Andrey Nikolaevich Kolmogorov",
+          "credit": "https://en.wikipedia.org/wiki/Andrey_Kolmogorov"
+        },
+        "start_date": {
+          "year": "1933"
+        },
+        "text": {
+          "headline": "Modern Probability Theory",
+          "text": "<p>In 1933, Andrey Nikolaevich Kolmogorov, a prominent Soviet mathematician, published his groundbreaking book, 'Basic notions of the calculus of probability' (Grundbegriffe der Wahrscheinlichkeitsrechnung), which revolutionized the field of probability theory. Kolmogorov's work established a rigorous mathematical foundation for probability based on measure theory, a branch of mathematics that deals with the sizes of sets and the functions defined on them.<br>Prior to Kolmogorov's axiomatization, probability theory lacked a unified and rigorous framework. Various approaches and interpretations existed, often leading to inconsistencies and confusion. Kolmogorov's work addressed these issues by providing a set of axioms, or fundamental assumptions, upon which probability theory could be built.</p>"
+        },
+        "unique_id": "probability-theory"
+      },
+      {
+        "media": {
+          "url": "./media/Kefauver-Harris.jpg",
+          "caption": "The Kefauver-Harris Amendment of 1962 mandated that drug manufacturers provide substantial evidence of efficacy and safety through well-controlled clinical trials.",
+          "credit": "https://www.fda.gov/about-fda/fda-history-exhibits/brief-history-center-drug-evaluation-and-research"
+        },
+        "start_date": {
+          "year": "1962"
+        },
+        "text": {
+          "headline": "The FDA and p-Values",
+          "text": "<p>The use of p-values by the U.S. Food and Drug Administration (FDA) in the approval of new drugs is a cornerstone of modern statistical practice in biomedical research. The concept of the p-value, which measures the probability that an observed effect could occur by chance under the null hypothesis, gained prominence in the early 20th century through the work of statisticians like Ronald Fisher. By the mid-20th century, the FDA began to incorporate statistical methods into its regulatory framework to ensure that new drugs were both safe and effective.<br>The formal integration of p-values into drug approval processes began in earnest after the thalidomide disaster of the 1960s, which underscored the need for rigorous testing and evidence-based approval standards. In response, the 1962 Kefauver-Harris Amendment to the Federal Food, Drug, and Cosmetic Act mandated that drug manufacturers provide substantial evidence of efficacy and safety through well-controlled clinical trials. This legislative change marked the beginning of the FDA's reliance on statistical evidence, including p-values, to assess the significance of clinical trial results.<br>In the following decades, the FDA refined its guidelines and statistical requirements. By the 1980s and 1990s, the use of p-values became standardized in the assessment of clinical trial data. The FDA typically requires that the p-value for primary efficacy endpoints be less than 0.05, indicating that there is less than a 5% probability that the observed results are due to chance. This threshold helps ensure that the findings are statistically significant and that the new drug demonstrates a genuine therapeutic benefit.<br><br>Kennedy-Shaffer L. When the Alpha is the Omega: P-Values, 'Substantial Evidence,' and the 0.05 Standard at FDA. Food Drug Law J. 2017;72(4)595-635. PMID: 30294197; PMCID: PMC6169785.</p>"
+        },
+        "unique_id": "the-p-value"
+      },
+      {
+        "media": {
+          "url": "./media/plinko.png",
+          "caption": "The game of Plinko exhibits the central limit theorem.",
+          "credit": "https://www.forbes.com/sites/startswithabang/2020/11/11/how-the-game-of-plinko-perfectly-illustrates-chaos-theory/"
+        },
+        "start_date": {
+          "year": "1983"
+        },
+        "text": {
+          "text": "<p>Plinko, one of the most iconic and thrilling pricing games on 'The Price Is Right,' made its debut on January 3, 1983. Created by the show's producer Frank Wayne, Plinko quickly became a fan favorite due to its unique blend of chance and strategy. The game involves contestants earning up to five Plinko chips through an initial pricing game, after which they drop these chips down a large vertical pegboard. As the chips descend, they bounce unpredictably off a series of pegs, adding to the suspense as they move horizontally and vertically toward one of the prize slots at the bottom. Each slot has a different monetary value, and the potential to win up to $50,000 has made Plinko one of the most exciting and beloved segments on 'The Price Is Right.'<br>Plinko's gameplay provides an intriguing real-world example of the central limit theorem (a later generalization of the law of large numbers) in action. The law of large numbers is a fundamental principle in probability theory that states that as the number of trials increases, the average result will converge to the expected value. In the context of Plinko, each chip's path down the pegboard is highly unpredictable due to the numerous collisions with pegs, resulting in a wide range of possible outcomes. However, if a large number of Plinko chips were dropped, the distribution of chips across the prize slots would begin to approximate the underlying probabilities dictated by the design of the board.</p>"
+        },
+        "unique_id": "the-law-of-large-numbers"
       }
     ]
 }
