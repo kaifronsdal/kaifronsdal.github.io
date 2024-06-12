@@ -16,8 +16,17 @@ description:         ''
 url:                 https://kaifronsdal.github.io
 baseurl:             ''
 paginate:            5
-permalink:           'perm'
+# permalink:           pretty
 excerpt_separator: <!--more-->
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /:categories/:year/:month/:day/:title/
+  projects:
+    output: true
+    permalink: /:categories/:title/
 
 # About/contact
 author:
