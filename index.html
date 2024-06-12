@@ -13,7 +13,7 @@ title: Home
     </h1>
 
     <span class="post-date">{{ post.date | date_to_string }}</span>
-    {% assign excerpt_split = post.excerpt | split: "<div class="footnotes" role="doc-endnotes">" %}
+    {% assign excerpt_split = post.excerpt | split: "<div class='footnotes' role='doc-endnotes'>" %}
     {{ excerpt_split.first }}
   </div>
   {% endfor %}
