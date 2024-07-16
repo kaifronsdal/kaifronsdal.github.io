@@ -17,7 +17,8 @@ $$\newcommand{\cosim}{\operatorname{sim}}
 \newcommand{\EE}{\mathcal{E}}
 \newcommand{\XX}{\mathcal{X}}
 \newcommand{\norm}[1]{\left\lVert#1\right\rVert}
-\newcommand{\E}{\mathbb{E}}$$
+\newcommand{\E}{\mathbb{E}}
+\renewcommand{\R}{\mathbb{R}}$$
 
 
 # Why Goodhart's Law Matters for AI
@@ -467,7 +468,7 @@ $$
 \OE_V(U^*) < 0
 $$
 
-In this scenario the agent has some incentive to optimize the proxy (e.g. it receives monetary rewards/resources or if it doesn't increase the proxy it will be shut off). However, it will try to align the proxy, $$U$$, with $$V$$, thus destroying the relationship $$U$$ had with $$U^*$$. The agent can take advantage of any of the four Goodhart mechanisms to achieve this. See Figure \ref{fig:adversarial} for a visual representation of the causal model of the adversarial Goodhart effect.
+In this scenario the agent has some incentive to optimize the proxy (e.g. it receives monetary rewards/resources or if it doesn't increase the proxy it will be shut off). However, it will try to align the proxy, $$U$$, with $$V$$, thus destroying the relationship $$U$$ had with $$U^*$$. The agent can take advantage of any of the four Goodhart mechanisms to achieve this.
 
 ![Adversarial Goodhart Effect](/assets/goodharts_law/adverarial_goodhart_effect.png)
 
@@ -561,7 +562,10 @@ Future research should continue to refine and expand upon the framework presente
     Applying this to our specific case we get
 
     $$
-    \cosim(\nabla_\theta \U, \nabla_{\theta^*} \U^*) \geq \cosim(\nabla_\theta \U,\nabla_\theta \U^*) \frac{\norm{\nabla_\theta \U^*}}{\norm{\nabla_{\theta^*} \U^*}} - \frac{\norm{(\tilde{\theta} - \theta) \nabla_\theta^2 \U^*}}{\norm{\nabla_{\theta^*} \U^*}} \geq \cosim(\nabla_\theta \U,\nabla_\theta \U^*) \frac{\norm{\nabla_\theta \U^*}}{\norm{\nabla_{\theta^*} \U^*}} - \frac{\alpha\norm{\nabla_\theta \U}\norm{\nabla_\theta^2 \U^*}_{2,2}}{\norm{\nabla_{\theta^*} \U^*}}
+    \begin{align*}
+    \cosim(\nabla_\theta \U, \nabla_{\theta^*} \U^*) &\geq \cosim(\nabla_\theta \U,\nabla_\theta \U^*) \frac{\norm{\nabla_\theta \U^*}}{\norm{\nabla_{\theta^*} \U^*}} - \frac{\norm{(\tilde{\theta} - \theta) \nabla_\theta^2 \U^*}}{\norm{\nabla_{\theta^*} \U^*}}\\
+    &\geq \cosim(\nabla_\theta \U,\nabla_\theta \U^*) \frac{\norm{\nabla_\theta \U^*}}{\norm{\nabla_{\theta^*} \U^*}} - \frac{\alpha\norm{\nabla_\theta \U}\norm{\nabla_\theta^2 \U^*}_{2,2}}{\norm{\nabla_{\theta^*} \U^*}}
+    \end{align*}
     $$
 
     We want $$\cosim(\nabla_\theta \U,\nabla_{\theta^*} \U^*) > 0$$, so a sufficient condition is
