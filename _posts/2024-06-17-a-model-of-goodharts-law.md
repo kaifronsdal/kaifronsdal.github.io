@@ -7,7 +7,7 @@ excerpt: Imagine you're trying to create an AI system to maximize human happines
 <!-- add css to make image height fixed -->
 <style>
     p img {
-        max-height: 500px;
+        max-height: 14em;
         display: block;
         margin-left: auto;
         margin-right: auto;
