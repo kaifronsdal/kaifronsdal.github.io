@@ -123,7 +123,11 @@ We can think of $$Z$$ as representing the cause of any uncertainty not captured 
 
 [^multivariate]: Hint: Use joint CDFs.
 
-![Transforming a Causal Graph into Standard Form](/assets/goodharts_law/causal_model_standard_form.png)
+<div align="center">
+	<img src="/assets/goodharts_law/causal_model_standard_form.png", alt="Transforming a Causal Graph into Standard Form">
+</div>
+
+<!-- ![Transforming a Causal Graph into Standard Form](/assets/goodharts_law/causal_model_standard_form.png) -->
 
 The main takeaway of this standard form is that we can rewrite any causal graph so that all of the randomness is contained in the roots of the graph and all child nodes are deterministic functions of their parents.
 
@@ -132,7 +136,11 @@ The main takeaway of this standard form is that we can rewrite any causal graph 
 
 We set up our model of Goodhart's Law as follows. Consider an agent with parameters $$\theta$$ that determine its behavior. Our environment is represented by an arbitrary causal model. From our discussion above, we can represent the causal model in a standard form where all the randomness in the environment is described by a set of environment variables $$\EE$$ that have no parents. Our true objective is denoted by the true goal function $$U^*(\theta, \EE)$$ while our proxy metric is denoted by $$U(\theta, \EE)$$.
 
-![Visual Depiction of the Causal Graph Modeling Goodhart's Law](/assets/goodharts_law/the_main_model.png)
+<div align="center">
+    <img src="/assets/goodharts_law/the_main_model.png", alt="Visual Depiction of the Causal Graph Modeling Goodhart's Law">
+</div>
+
+<!-- ![Visual Depiction of the Causal Graph Modeling Goodhart's Law](/assets/goodharts_law/the_main_model.png) -->
 
 *Arrows denote direct causal relationships. The dashed box in the middle represents an arbitrary causal graph. The dotted line with question mark represents an optional causal relationship from $$U$$ to $$U^*$$ or vise-versa.*
 
@@ -235,7 +243,11 @@ $$
 
 This mechanism is impossible to get rid of entirely whenever the proxy differs from the goal in any way. In many contexts, we can think of the regressional mechanism as the generalization gap in the context of train and test sets or the gap between training and deployment.
 
-![Regressional Mechanism](/assets/goodharts_law/regressional_example.png)
+<div align="center">
+    <img src="/assets/goodharts_law/regressional_example.png", alt="Regressional Mechanism">
+</div>
+
+<!-- ![Regressional Mechanism](/assets/goodharts_law/regressional_example.png) -->
 
 ### Extremal
 
@@ -363,13 +375,21 @@ This result also gives an interpretation as to why we see overfitting when using
 
 This result has some similarities to \cite{karwowski2023goodharts} where they characterize Goodhart's law for RL agents in a finite state and action space using the angle between reward vectors in the space of occupancy measures. However, our result applies to any optimization problem.
 
-![Screenshot from "Goodhart’s Law in Reinforcement Learning"](/assets/goodharts_law/goodhart_in_RL.png)
+<div align="center">
+    <img src="/assets/goodharts_law/overfitting.png", alt="Screenshot from 'Goodhart’s Law in Reinforcement Learning'">
+</div>
+
+<!-- ![Screenshot from "Goodhart’s Law in Reinforcement Learning"](/assets/goodharts_law/goodhart_in_RL.png) -->
 
 
 #### Toy Example
 I trained a three-layer neural network with 50 neurons in its hidden layer on 10 data points sampled from a noisy linear model. During training, the loss on the training set consistently decreases, while the loss on the test set decreases for the first 10 epochs but then starts to increase. As training progresses, the magnitudes of the gradients with respect to the training set approach 0, whereas the magnitudes of the gradients with respect to the test set hover around 5. Notably, the angle between the training and test gradients initially starts below 90 degrees but exceeds 90 degrees after 10 epochs, and oscillates around just over 90 degrees after 20 epochs.
 
-![Toy Example of Optimization Efficiency](/assets/goodharts_law/goodhart_regressional.png)
+<div align="center">
+    <img src="/assets/goodharts_law/goodhart_regressional.png", alt="Toy Example of Optimization Efficiency">
+</div>
+
+<!-- ![Toy Example of Optimization Efficiency](/assets/goodharts_law/goodhart_regressional.png) -->
 
 This behavior indicates that the model is exhibiting an extremal mechanism. Initially, the gradients for both the training and test sets point in similar directions (angle < 90 degrees), indicating that optimizing the model on the training data also improves performance on the test data. However, as training continues, the gradients start pointing in increasingly different directions (angle > 90 degrees), suggesting that further training improves the fit to the training data at the expense of the test data. The oscillation just above 90 degrees is a consequence of the direction of the training gradient being susceptible to small changes due to its small magnitude.
 
@@ -401,15 +421,27 @@ Informally, increasing $$v$$ increases either $$U$$ or $$U^*$$ but decreases or 
 
 **Independent Cause** When there is a cause $$I$$ of $$U$$ that has no causal relationship with $$U^*$$, modifying $$I$$ can change $$\U$$ without changing $$\U^*$$, thus breaking the relationship between the goal and proxy. In the causal graph, this is represented by a node $$I$$ that has a causal effect on $$U$$ but not $$U^*$$. Importantly, $$U$$ cannot have a causal effect on $$U^*$$, but $$U^*$$ can have a causal effect on $$U$$.
 
-![Independent Cause](/assets/goodharts_law/independent_cause.png)
+<div align="center">
+    <img src="/assets/goodharts_law/independent_cause.png", alt="Independent Cause">
+</div>
+
+<!-- ![Independent Cause](/assets/goodharts_law/independent_cause.png) -->
 
 **Shared Cause** When there is a node $$S$$ that is a cause of both $$U$$ and $$U^*$$, modifying $$S$$ can increase $$\U$$ and decrease $$\U^*$$. Note that while $$\theta$$ is always a shared cause in our model, $$\theta$$ doesn't necessarily have to have opposite effects on $$\U$$ and $$\U^*$$.
 
-![Shared Cause](/assets/goodharts_law/shared_cause.png)
+<div align="center">
+    <img src="/assets/goodharts_law/shared_cause.png", alt="Shared Cause">
+</div>
+
+<!-- ![Shared Cause](/assets/goodharts_law/shared_cause.png) -->
 
 **Intermediary Cause** If the agent can effect an intermediary node on a path between $$U$$ and $$U^*$$, this can break the relationship between $$U$$ and $$U^*$$. In the figure below we show a path $$U \to I \to U^*$$, but could have just as easily been $$U^* \to I \to U$$.
 
-![Intermediary Cause](/assets/goodharts_law/intermediary_cause.png)
+<div align="center">
+    <img src="/assets/goodharts_law/intermediary_cause.png", alt="Intermediary Cause">
+</div>
+
+<!-- ![Intermediary Cause](/assets/goodharts_law/intermediary_cause.png) -->
 
 
 #### Examples
@@ -470,7 +502,11 @@ $$
 
 In this scenario the agent has some incentive to optimize the proxy (e.g. it receives monetary rewards/resources or if it doesn't increase the proxy it will be shut off). However, it will try to align the proxy, $$U$$, with $$V$$, thus destroying the relationship $$U$$ had with $$U^*$$. The agent can take advantage of any of the four Goodhart mechanisms to achieve this.
 
-![Adversarial Goodhart Effect](/assets/goodharts_law/adverarial_goodhart_effect.png)
+<div align="center">
+    <img src="/assets/goodharts_law/adverarial_goodhart_effect.png", alt="Adversarial Goodhart Effect">
+</div>
+
+<!-- ![Adversarial Goodhart Effect](/assets/goodharts_law/adverarial_goodhart_effect.png) -->
 
 Before optimization there is a negative relationship between $$V$$ and $$U^*$$ represented by the red dashed line. There is also a positive relationship between $$U$$ and $$U^*$$ indicated by the dashed green line. On the right, during optimization, the agent takes advantage of various Goodhart mechanisms to create a positive relationship between $$V$$ and $$U$$. As a consequence there is now a negative relationship between $$U$$ and $$U^*$$.
 
@@ -492,7 +528,11 @@ Before optimization there is a negative relationship between $$V$$ and $$U^*$$ r
 
     A critical area for future research is the exploration of the relationship between agent actions and the environment, beyond merely considering parameters $$\theta$$. This agentic framework involves studying how agents’ decisions and actions influence the state of the environment and vice versa. Another important aspect to consider is multi-step decision-making, incorporating aspects such as temporal dependencies, path dependencies, and strategic planning. This relates to the larger body of work related to agent/RL foundations.
 
-    ![A potential Agentic Goodhart Framework](/assets/goodharts_law/agentic_causal_model.png)
+    <div align="center">
+        <img src="/assets/goodharts_law/agentic_causal_model.png", alt="A potential Agentic Goodhart Framework">
+    </div>
+
+    <!-- ![A potential Agentic Goodhart Framework](/assets/goodharts_law/agentic_causal_model.png) -->
 
 # Conclusion
 
