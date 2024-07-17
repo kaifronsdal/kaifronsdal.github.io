@@ -9,13 +9,16 @@ excerpt: Imagine you're trying to create an AI system to maximize human happines
     p img {
         height: 14em;
         display: block;
-        margin-left: auto;
-        margin-right: auto;
+        width: auto;
+        max-width: none;
+        margin-left: 50%;
+        transform: translateX(-50%);
     }
-    /* Also add a centering alignment to <p> containing <img>
+    /* Also add a centering alignment to <p> containing <img> */
     p:has(img) {
         text-align: center;
-    } */
+        overflow: visible;
+    }
 </style>
 
 *I'm excited to share some work I did on Goodhart's Law as part of Stanford's new alignment class, MS&E 338 Aligning Superintelligence. There have been some attempts in the past to categorize and model Goodhart’s Law, but they generally suffer from a lack of specificity and concreteness and are not written in the context of AI alignment. This project aims to expand on previous work and adapt them for AI alignment.*
