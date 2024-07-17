@@ -140,6 +140,13 @@ We can think of $$Z$$ as representing the cause of any uncertainty not captured 
 
 [^multivariate]: Hint: Use joint CDFs.
 
+<style>
+    img[src*="causal_model_standard_form.png"] {
+        height: 8em;
+    }
+</style>
+
+
 ![Transforming a Causal Graph into Standard Form](/assets/goodharts_law/causal_model_standard_form.png)
 
 The main takeaway of this standard form is that we can rewrite any causal graph so that all of the randomness is contained in the roots of the graph and all child nodes are deterministic functions of their parents.
@@ -154,7 +161,7 @@ We set up our model of Goodhart's Law as follows. Consider an agent with paramet
     <img src="/assets/goodharts_law/the_main_model.png", alt="Visual Depiction of the Causal Graph Modeling Goodhart's Law">
 </div> -->
 
-![Visual Depiction of the Causal Graph Modeling Goodhart's Law](/assets/goodharts_law/the_main_model.png)
+![Visual Depiction of the Causal Graph Modeling Goodhart's Law](/assets/goodharts_law/the_main_model.png){: height="20em"}
 
 *Arrows denote direct causal relationships. The dashed box in the middle represents an arbitrary causal graph. The dotted line with question mark represents an optional causal relationship from $$U$$ to $$U^*$$ or vise-versa.*
 
@@ -502,7 +509,7 @@ I am sadly not aware of any great ways to mitigate tampering mechanisms. The bes
 
 Mitigating generalization mechanisms is a more mature area of study. Solutions include creating hyper-realistic simulations (\cite{9308468, doi:10.1126/scirobotics.adi8022, ma2024dreureka}), scaling up the amount (\cite{openai2023gpt4}) and diversity (\cite{gunasekar2023textbooks}) of training data, and applying regularization to the model such as weight-decay (\cite{power2022grokking}) or drop-out.
 
-##Goodhart Effects
+## Goodhart Effects
 
 Now that we've covered the mechanisms through which Goodhart's Law can occur, we can discuss the ways int which these mechanisms might be realized.
 
