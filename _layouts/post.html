@@ -191,8 +191,25 @@ body {
     sync();
     
   }
+
+  // get current window size
+  function getViewport() {
+    return {
+      x: window.pageXOffset,
+      y: window.pageYOffset,
+      w: document.documentElement.clientWidth,
+      h: document.documentElement.clientHeight
+    };
+  }
+
+  var currentWindowSize = getViewport();
   
   function sync() {
+
+    if (currentWindowSize !== getViewport()) {
+      currentWindowSize = getViewport();
+      drawPath();
+    }
     
     var windowHeight = window.innerHeight;
     
