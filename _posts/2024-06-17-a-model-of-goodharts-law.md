@@ -124,10 +124,10 @@ We can think of $$Z$$ as representing the cause of any uncertainty not captured 
 [^multivariate]: Hint: Use joint CDFs.
 
 <div align="center">
-	<img src="/assets/goodharts_law/causal_model_standard_form.png", alt="Transforming a Causal Graph into Standard Form">
+	<a src="/assets/goodharts_law/causal_model_standard_form.png", alt="Transforming a Causal Graph into Standard Form"></a>
 </div>
 
-<img src="/assets/goodharts_law/causal_model_standard_form.png", alt="Transforming a Causal Graph into Standard Form">
+<a src="/assets/goodharts_law/causal_model_standard_form.png", alt="Transforming a Causal Graph into Standard Form"></a>
 
 <!-- ![Transforming a Causal Graph into Standard Form](/assets/goodharts_law/causal_model_standard_form.png) -->
 
