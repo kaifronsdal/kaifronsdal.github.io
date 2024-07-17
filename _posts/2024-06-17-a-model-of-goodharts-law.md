@@ -7,7 +7,7 @@ excerpt: Imagine you're trying to create an AI system to maximize human happines
 <!-- add css to make image height fixed -->
 <style>
     p img {
-        max-height: 14em;
+        height: 14em;
         display: block;
         margin-left: auto;
         margin-right: auto;
@@ -544,11 +544,6 @@ Before optimization there is a negative relationship between $$V$$ and $$U^*$$ r
 4. **Relationship Between Agent Actions and Environment**
 
     A critical area for future research is the exploration of the relationship between agent actions and the environment, beyond merely considering parameters $$\theta$$. This agentic framework involves studying how agents’ decisions and actions influence the state of the environment and vice versa. Another important aspect to consider is multi-step decision-making, incorporating aspects such as temporal dependencies, path dependencies, and strategic planning. This relates to the larger body of work related to agent/RL foundations.
-
-    <!-- 
-    <div align="center">
-        <img src="/assets/goodharts_law/agentic_causal_model.png", alt="A potential Agentic Goodhart Framework">
-    </div> -->
 
     ![A potential Agentic Goodhart Framework](/assets/goodharts_law/agentic_causal_model.png)
 
