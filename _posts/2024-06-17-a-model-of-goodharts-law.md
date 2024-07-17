@@ -161,7 +161,13 @@ We set up our model of Goodhart's Law as follows. Consider an agent with paramet
     <img src="/assets/goodharts_law/the_main_model.png", alt="Visual Depiction of the Causal Graph Modeling Goodhart's Law">
 </div> -->
 
-![Visual Depiction of the Causal Graph Modeling Goodhart's Law](/assets/goodharts_law/the_main_model.png){: height="20em"}
+<style>
+    img[src*="the_main_model.png"] {
+        height: 16em;
+    }
+</style>
+
+![Visual Depiction of the Causal Graph Modeling Goodhart's Law](/assets/goodharts_law/the_main_model.png)
 
 *Arrows denote direct causal relationships. The dashed box in the middle represents an arbitrary causal graph. The dotted line with question mark represents an optional causal relationship from $$U$$ to $$U^*$$ or vise-versa.*
 
@@ -533,6 +539,12 @@ In this scenario the agent has some incentive to optimize the proxy (e.g. it rec
     <img src="/assets/goodharts_law/adverarial_goodhart_effect.png", alt="Adversarial Goodhart Effect">
 </div> -->
 
+<style>
+    img[src*="adverarial_goodhart_effect.png"] {
+        height: 16em;
+    }
+</style>
+
 ![Adversarial Goodhart Effect](/assets/goodharts_law/adverarial_goodhart_effect.png)
 
 Before optimization there is a negative relationship between $$V$$ and $$U^*$$ represented by the red dashed line. There is also a positive relationship between $$U$$ and $$U^*$$ indicated by the dashed green line. On the right, during optimization, the agent takes advantage of various Goodhart mechanisms to create a positive relationship between $$V$$ and $$U$$. As a consequence there is now a negative relationship between $$U$$ and $$U^*$$.
@@ -554,6 +566,12 @@ Before optimization there is a negative relationship between $$V$$ and $$U^*$$ r
 4. **Relationship Between Agent Actions and Environment**
 
     A critical area for future research is the exploration of the relationship between agent actions and the environment, beyond merely considering parameters $$\theta$$. This agentic framework involves studying how agents’ decisions and actions influence the state of the environment and vice versa. Another important aspect to consider is multi-step decision-making, incorporating aspects such as temporal dependencies, path dependencies, and strategic planning. This relates to the larger body of work related to agent/RL foundations.
+    
+    <style>
+        img[src*="agentic_causal_model.png"] {
+            height: 16em;
+        }
+    </style>
 
     ![A potential Agentic Goodhart Framework](/assets/goodharts_law/agentic_causal_model.png)
 
