@@ -127,6 +127,8 @@ We can think of $$Z$$ as representing the cause of any uncertainty not captured 
 	<img src="/assets/goodharts_law/causal_model_standard_form.png", alt="Transforming a Causal Graph into Standard Form">
 </div>
 
+<img src="/assets/goodharts_law/causal_model_standard_form.png", alt="Transforming a Causal Graph into Standard Form">
+
 <!-- ![Transforming a Causal Graph into Standard Form](/assets/goodharts_law/causal_model_standard_form.png) -->
 
 The main takeaway of this standard form is that we can rewrite any causal graph so that all of the randomness is contained in the roots of the graph and all child nodes are deterministic functions of their parents.
