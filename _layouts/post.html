@@ -247,8 +247,8 @@ body {
         return targetBounds.bottom < windowHeight * TOP_MARGIN;
       }).pop();
       if (lastVisibleItem) {
-        pathStart = Math.min( lastVisibleItem.pathStart, pathStart );
-        pathEnd = pathLength;
+        pathStart = item.pathStart;
+        pathEnd = item.pathEnd;
 
         lastVisibleItem.listItem.classList.add( 'visible' );
 
