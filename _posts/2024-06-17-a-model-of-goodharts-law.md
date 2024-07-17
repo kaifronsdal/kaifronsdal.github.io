@@ -4,6 +4,17 @@ title: A Model of Goodhart's Law
 excerpt: Imagine you're trying to create an AI system to maximize human happiness. You might use some proxy metric, like the number of smiles detected on people's faces. Seems reasonable, right? But then your AI starts doing things like tickling people against their will or forcing them to watch cat videos 24/7. Congratulations, you've just run into Goodhart's Law! In this blog post, I present a new model of Goodhart's Law that aims to provide a clearer, more useful framework for thinking about Goodhart's Law in the context of AI alignment.
 ---
 
+<!-- add css to make image height fixed -->
+<style>
+    img {
+        max-height: 500px;
+    }
+    /* Also add a centering alignment to <p> containing <img> */
+    p:has(img) {
+        text-align: center;
+    }
+</style>
+
 *I'm excited to share some work I did on Goodhart's Law as part of Stanford's new alignment class, MS&E 338 Aligning Superintelligence. There have been some attempts in the past to categorize and model Goodhart’s Law, but they generally suffer from a lack of specificity and concreteness and are not written in the context of AI alignment. This project aims to expand on previous work and adapt them for AI alignment.*
 
 
