@@ -192,24 +192,24 @@ body {
     
   }
 
-  // get current window size
-  function getViewport() {
-    return {
-      x: window.pageXOffset,
-      y: window.pageYOffset,
-      w: document.documentElement.clientWidth,
-      h: document.documentElement.clientHeight
-    };
-  }
+  // // get current window size
+  // function getViewport() {
+  //   return {
+  //     x: window.pageXOffset,
+  //     y: window.pageYOffset,
+  //     w: document.documentElement.clientWidth,
+  //     h: document.documentElement.clientHeight
+  //   };
+  // }
 
-  var currentWindowSize = getViewport();
+  // var currentWindowSize = getViewport();
   
   function sync() {
 
-    if (currentWindowSize !== getViewport()) {
-      currentWindowSize = getViewport();
-      drawPath();
-    }
+    // if (currentWindowSize !== getViewport()) {
+    //   currentWindowSize = getViewport();
+    //   drawPath();
+    // }
     
     var windowHeight = window.innerHeight;
     
@@ -235,6 +235,26 @@ body {
       }
       
     } );
+
+    // in the case where there are no visible items
+    // because one of the items is too tall to fit the screen
+    // we want to extend the path to the bottom of the last
+    // item
+    if (visibleItems === 0 && tocItems.length > 0) {
+      // find the tokItem that is just above where we are
+      var lastVisibleItem = tocItems.filter(function(item) {
+        var targetBounds = item.target.getBoundingClientRect();
+        return targetBounds.bottom < windowHeight * TOP_MARGIN;
+      }).pop();
+      if (lastVisibleItem) {
+        pathStart = Math.min( lastVisibleItem.pathStart, pathStart );
+        pathEnd = pathLength;
+
+        lastVisibleItem.listItem.classList.add( 'visible' );
+
+        visibleItems = 1;
+      }
+    }
     
     // Specify the visible path or hide the path altogether
     // if there are no visible items
@@ -253,6 +273,7 @@ body {
     lastPathEnd = pathEnd;
   
   }
+
   </script>
 
 <div class="post">
