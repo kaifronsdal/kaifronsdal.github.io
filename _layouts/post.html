@@ -6,11 +6,23 @@ layout: default
 
 .toc {
   position: fixed;
-  left: 3em;
-  top: 5em;
+  right: 1em;
+  top: 3em;
   padding: 1em;
-  width: 14em;
+  width: calc((100% - 28rem) / 2);
   line-height: 2;
+}
+
+@media (min-width: 38em) {
+  .toc {
+    width: calc((100% - 32rem) / 2);
+  }
+}
+
+@media (min-width: 60em) {
+  .toc {
+    width: calc((100% - 38rem) / 2);
+  }
 }
 
 .toc ul {
@@ -23,12 +35,114 @@ layout: default
   padding-left: 2em;
 }
 
-.toc li a {
+.toc .toc-item {
   display: inline-block;
+  transition: all 0.3s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+  /* height: 2.5em; */
+  height: 100%;
+  width: 100%;
+  /* background-color: #ffcbcb; */
+  display: flex;
+  align-items: center;
+}
+
+/* .toc .level-2 .toc-item {
+  height: 1.5em;
+}
+
+.toc .level-3 .toc-item {
+  height: 1em;
+} */
+
+.toc li .toc-item .toc-item-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   color: #aaa;
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.230, 1.000, 0.320, 1.000);
 }
+
+.toc .level-1 .toc-item .toc-item-text {
+  font-size: 16px;
+}
+
+.toc .level-2 .toc-item .toc-item-text {
+  font-size: 15px;
+}
+
+.toc .level-3 .toc-item .toc-item-text {
+  font-size: 14px;
+}
+
+@media (min-width: 38em) {
+  .toc .level-1 .toc-item .toc-item-text {
+    font-size: 18px;
+  }
+
+  .toc .level-2 .toc-item .toc-item-text {
+    font-size: 17px;
+  }
+
+  .toc .level-3 .toc-item .toc-item-text {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .toc .level-1 .toc-item .toc-item-text {
+    font-size: 14px;
+  }
+
+  .toc .level-2 .toc-item .toc-item-text {
+    font-size: 13px;
+  }
+
+  .toc .level-3 .toc-item .toc-item-text {
+    font-size: 12px;
+  }
+}
+
+/* .toc > ul ul {
+  display: none;
+}
+.toc > ul > li:hover > ul,
+.toc > ul > li > ul > li:hover > ul {
+  display: block;
+} */
+
+.toc > ul ul {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+/* .toc > ul > li:hover > ul,
+.toc > ul > li > ul > li:hover > ul {
+  height: auto;
+} */
+
+/* .toc .toc-item-line {
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+  background-color: #aaa;
+  margin-right: 1em;
+}
+
+.toc .level-2 .toc-item-line {
+  height: 1px;
+}
+
+.toc .level-3 .toc-item-line {
+  height: 0.5px;
+}
+
+.toc li .toc-item:hover .toc-item-text {
+  display: block;
+}
+
+.toc li .toc-item:hover .toc-item-line {
+  display: none;
+} */
 
 .toc li.visible > a {
   color: #111;
@@ -89,14 +203,38 @@ layout: default
 </style>
 
 <div class="container">
-  <div class="toc">
-    {% include toc.html html=content %}
-    <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
-      <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
-    </svg>
+  <div class="post">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <span class="post-date">{{ page.date | date_to_string }}</span>
+    {{ content }}
   </div>
 
-  <script>
+  <div class="toc">
+    {% include toc.html html=content item_class="level-%level%" %}
+    <!-- <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+      <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
+    </svg> -->
+  </div>
+
+  {% if site.related_posts.size >= 1 %}
+  <div class="related">
+    <h2>Related posts</h2>
+    <ul class="related-posts">
+      {% for post in site.related_posts limit:3 %}
+        <li>
+          <h3>
+            <a href="{{ site.baseurl }}{{ post.url }}">
+              {{ post.title }}
+              <small>{{ post.date | date_to_string }}</small>
+            </a>
+          </h3>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endif %}
+
+  <!-- <script>
     var toc = document.querySelector('.toc');
     var tocPath = document.querySelector('.toc-marker path');
     var tocItems;
@@ -119,8 +257,9 @@ layout: default
     
       // Cache element references and measurements
       tocItems = tocItems.map( function( item ) {
-        var anchor = item.querySelector( 'a' );
-        var target = document.getElementById( anchor.getAttribute( 'href' ).slice( 1 ) );
+        // select the first anchor in the item which is in a "a" tag in a div
+        var anchor = item.querySelector( 'div' );
+        var target = document.getElementById( anchor.querySelector( 'a' ).getAttribute( 'href' ).slice( 1 ) );
     
         return {
           listItem: item,
@@ -171,8 +310,6 @@ layout: default
       pathLength = tocPath.getTotalLength();
       
       sync();
-      
-      console.log("Finished drawing path");
     }
 
     // // get current window size
@@ -230,8 +367,8 @@ layout: default
           return targetBounds.bottom < windowHeight * TOP_MARGIN;
         }).pop();
         if (lastVisibleItem) {
-          pathStart = item.pathStart;
-          pathEnd = item.pathEnd;
+          pathStart = lastVisibleItem.pathStart;
+          pathEnd = lastVisibleItem.pathEnd;
 
           lastVisibleItem.listItem.classList.add( 'visible' );
 
@@ -257,29 +394,93 @@ layout: default
     
     }
 
+  </script> -->
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!-- Properly center long lines -->
+  <style>
+    /* mjx-container[jax="CHTML"][display="true"] mjx-math {
+      padding-left: 100%;
+      transform: translateX(-50%);
+    } */
+
+    .centered-math {
+      padding-left: 100%;
+      transform: translateX(-50%);
+    }
+
+    .scrollable-container {
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  </style>
+
+  <script>
+    function wrapOverflowingMath() {
+      const mathContainers = document.querySelectorAll("mjx-container");
+
+      mathElements.forEach(mjx_container => {
+        const mjx_math = mjx_container.querySelector("mjx-math");
+
+        console.log(mjx_math.clientWidth, mjx_container.clientWidth);
+
+        if (mjx_math && mjx_math.clientWidth > mjx_container.clientWidth) {
+          mjx_math.classList.add("centered-math");
+          mjx_container.classList.add("scrollable-container");
+        } else {
+          mjx_math.classList.remove("centered-math");
+          mjx_container.classList.remove("scrollable-container");
+        }
+      });
+    }
+
+    window.addEventListener("load", wrapOverflowingMath);
+    window.addEventListener("resize", wrapOverflowingMath);
   </script>
 
-  <div class="post">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <span class="post-date">{{ page.date | date_to_string }}</span>
-    {{ content }}
-  </div>
+  <script>
+    function setHeight(element, height) {
+    element.style.height = height + 'px';
+  }
 
-  {% if site.related_posts.size >= 1 %}
-  <div class="related">
-    <h2>Related posts</h2>
-    <ul class="related-posts">
-      {% for post in site.related_posts limit:3 %}
-        <li>
-          <h3>
-            <a href="{{ site.baseurl }}{{ post.url }}">
-              {{ post.title }}
-              <small>{{ post.date | date_to_string }}</small>
-            </a>
-          </h3>
-        </li>
-      {% endfor %}
-    </ul>
-  </div>
+  function updateParentHeights(element) {
+    let parent = element.parentElement.closest('ul');
+    while (parent) {
+      setHeight(parent, parent.scrollHeight);
+      parent = parent.parentElement.closest('ul');
+    }
+  }
+
+  function dynamicParentHeight(element) {
+    let parent = element.parentElement.closest('ul');
+    while (parent) {
+      parent.style.height = '100%';
+      parent = parent.parentElement.closest('ul');
+    }
+  }
+
+  document.querySelectorAll('.toc li').forEach(item => {
+    item.addEventListener('mouseenter', event => {
+      let sublist = item.querySelector('ul');
+      if (sublist) {
+        setHeight(sublist, sublist.scrollHeight);
+        dynamicParentHeight(sublist);
+        // sublist.addEventListener('transitionend', () => {
+        //   updateParentHeights(sublist);
+        // }, { once: true });
+      }
+    });
+
+    item.addEventListener('mouseleave', event => {
+      let sublist = item.querySelector('ul');
+      if (sublist) {
+        setHeight(sublist, 0);
+        dynamicParentHeight(sublist); 
+        // sublist.addEventListener('transitionend', () => {
+        //   updateParentHeights(sublist);
+        // }, { once: true });
+      }
+    });
+  });
+  </script>
 </div>
-{% endif %}

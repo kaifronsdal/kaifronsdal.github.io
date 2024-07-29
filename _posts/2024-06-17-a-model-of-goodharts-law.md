@@ -11,15 +11,60 @@ excerpt: Imagine you're trying to create an AI system to maximize human happines
         display: block;
         width: auto;
         max-width: none;
+    }
+
+    .centered-image {
         margin-left: 50%;
         transform: translateX(-50%);
     }
+
+    .scrollable-image {
+        margin-left: 0;
+        transform: none;
+    }
+
     /* Also add a centering alignment to <p> containing <img> */
-    p:has(img) {
+    /* p:has(img) {
+        text-align: center;
+        overflow: visible;
+    } */
+
+    .centered-container {
         text-align: center;
         overflow: visible;
     }
+
+    .scrollable-container {
+        overflow-x: auto;
+        white-space: nowrap;
+    }
 </style>
+
+<script>
+    function wrapOverflowingImages() {
+        const paragraphs = document.querySelectorAll("p:has(img)");
+
+        paragraphs.forEach(paragraph => {
+            const img = paragraph.querySelector("img");
+            if (img && img.clientWidth > window.innerWidth) { // add .scrollable-container class
+                paragraph.classList.add("scrollable-container");
+                paragraph.classList.remove("centered-container");
+
+                img.classList.add("scrollable-image");
+                img.classList.remove("centered-image");
+            } else { // add .centered-container class
+                paragraph.classList.add("centered-container");
+                paragraph.classList.remove("scrollable-container");
+
+                img.classList.add("centered-image");
+                img.classList.remove("scrollable-image");
+            }   
+        });
+    }
+
+    window.addEventListener("load", wrapOverflowingImages);
+    window.addEventListener("resize", wrapOverflowingImages);
+</script>
 
 *I'm excited to share some work I did on Goodhart's Law as part of Stanford's new alignment class, MS&E 338 Aligning Superintelligence. There have been some attempts in the past to categorize and model Goodhart’s Law, but they generally suffer from a lack of specificity and concreteness and are not written in the context of AI alignment. This project aims to expand on previous work and adapt them for AI alignment.*
 
@@ -288,7 +333,7 @@ $$
 <!-- % \[E(U, U^*) = \sup_{T_2 > T_1} \left(\OE_{U(\theta_{T_1})}(U^*(\theta_{T_1})) - \OE_{U(\theta_{T_2})}(U^*(\theta_{T_2})) \right)$$
 % is large. In other words, there is a range $$[T_1, T_2]$$ where there is a big decrease in optimization efficiency. In the worst case
 % \[E(U, U^*) > 1$$$ -->
-<details>
+<details markdown="1">
 <summary>Remark</summary>
 
 We define this characterization of an extremal mechanism in terms of a finite range during the process of optimization. The reason we don't consider the limiting behavior (i.e. $$\lim_{t \to \infty} \OE_U(U^*)$$) is because it is reasonable to expect the gradients to become orthogonal as we approach the optimum with respect to $$U$$, especially in high dimensions. Under the assumption that the relationship between $$\U(\theta)$$ and $$\U^*(\theta)$$ breaks near the optimum of $$\U(\theta)$$, it follows that $$\nabla_\theta \U \in \R^d$$ becomes random as we approach the optimum we see that (where we consider randomness over some distribution of functions $$\U$$). In this case the density of the optimization efficiency becomes
@@ -299,9 +344,10 @@ $$
 
 which is centered around 0 and has variance $$O(1/d)$$. If $$d$$ is large, we expect the optimization efficiency to be close to 0.
 For a proof of this fact see [^extremal_proof].
+</details>
 
 [^extremal_proof]: **Lemma.**
-    Let $$U$$ and $$V$$ be random unit vectors in $$ \R^d$$ for $$d \geq 2$$ and $$Z = \cosim(U, V)$$. Then the density of $$Z$$ is given by
+    Let $$U$$ and $$V$$ be random unit vectors in $$\R^d$$ for $$d \geq 2$$ and $$Z = \cosim(U, V)$$. Then the density of $$Z$$ is given by
     
     $$
     f_Z(z) = \frac{\Gamma \left( \frac{d}{2} \right)}{\Gamma \left( \frac{d-1}{2} \right) \sqrt{\pi}} (1-z^2)^{(d-3)/2}.
@@ -325,7 +371,7 @@ For a proof of this fact see [^extremal_proof].
     
     $$
     \begin{align*}
-        \operatorname{SA} (C_z) &= \int_{-1}^{z} \frac{\operatorname{SA} (S^{d-2}_{\sqrt{1-x^2}})}{{\sqrt{1-x^2}}} \, dx\\
+        \operatorname{SA} (C_z) &= \int_{-1}^{z} \frac{\operatorname{SA} (S^{d-2}_{\sqrt{1-x^2}})}{\sqrt{1-x^2}} \, dx\\
         &= \int_{-1}^{z} \frac{2 \pi^{(d-1)/2}}{\Gamma \left( \frac{d-1}{2} \right)} (1-x^2)^{(d-2)/2} \, dx
     \end{align*}
     $$
@@ -351,8 +397,6 @@ For a proof of this fact see [^extremal_proof].
     $$
     \operatorname{Var}(Z) = \E[Z^2] = \E[X] = \frac{1}{d-1}
     $$
-
-</details>
 
 #### Examples
 1. A scenario where extremal mechanisms might occur is when the proxy metric is capped at a maximum value, while the true goal is not. For example, this can happen with insufficiently powerful measurements, such as the maximum brightness a camera can capture. In this case, any increases in the proxy metric are due to small random fluctuations rather than meaningful increases in the true goal.
