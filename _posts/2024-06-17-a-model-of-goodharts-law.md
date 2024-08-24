@@ -114,7 +114,10 @@ Our model of Goodhart's Law consists of:
 3. A true goal function $$U^*(\theta, \EE)$$
 4. A proxy metric $$U(\theta, \EE)$$
 
-The key question is: How does optimizing the proxy metric $$U$$ relate to changes in the true goal $$U^*$$?
+The key question is: **How does optimizing the proxy metric $$U$$ relate to changes in the true goal $$U^*$$?**
+
+We split Goodhart's Law into two components: the mechanisms through which Goodhart's Law can occur and the processes by which these mechanisms are realized which we summarize below.
+
 
 ## Goodhart Mechanisms
 
@@ -123,7 +126,7 @@ The key question is: How does optimizing the proxy metric $$U$$ relate to change
     2. **Extremal**: The relationship between proxy and goal breaks down at extreme values.
 2. **Causal Design**
     1. **Tampering**: The agent modifies the causal structure of the environment, changing the relationship between goal and proxy.
-    2. **Generalization**: Changes in the environment alter the relationship between goal and proxy.
+    2. **Generalization**: Outside changes in the environment alter the relationship between goal and proxy.
 
 ## Goodhart Effects
 
