@@ -36,13 +36,14 @@ layout: default
 }
 
 .toc .toc-item {
-  display: inline-block;
-  transition: all 0.3s cubic-bezier(0.230, 1.000, 0.320, 1.000);
+  display: block;
+  /* transition: all 0.3s cubic-bezier(0.230, 1.000, 0.320, 1.000); */
   /* height: 2.5em; */
   height: 100%;
   width: 100%;
   /* background-color: #ffcbcb; */
-  display: flex;
+  /* display: flex; */
+  position: relative;
   align-items: center;
 }
 
@@ -55,11 +56,22 @@ layout: default
 } */
 
 .toc li .toc-item .toc-item-text {
+  display: inline-block;
+  width: 100%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   color: #aaa;
   text-decoration: none;
+}
+
+.toc li .toc-item .toc-item-text:hover {
+  color: #888888;
+}
+
+.toc li .current-toc-item .toc-item .toc-item-text {
+  /* text-decoration: underline; */
+  color: #888888;
 }
 
 .toc .level-1 .toc-item .toc-item-text {
@@ -110,11 +122,11 @@ layout: default
   display: block;
 } */
 
-.toc > ul ul {
+/* .toc > ul ul {
   height: 0;
   overflow: hidden;
   transition: height 0.3s ease;
-}
+} */
 /* .toc > ul > li:hover > ul,
 .toc > ul > li > ul > li:hover > ul {
   height: auto;
@@ -209,12 +221,12 @@ layout: default
     {{ content }}
   </div>
 
-  <div class="toc">
+  <!-- <div class="toc">
     {% include toc.html html=content item_class="level-%level%" %}
-    <!-- <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+    <svg class="toc-marker" width="200" height="200" xmlns="http://www.w3.org/2000/svg">
       <path stroke="#444" stroke-width="3" fill="transparent" stroke-dasharray="0, 0, 0, 1000" stroke-linecap="round" stroke-linejoin="round" transform="translate(-0.5, -0.5)" />
-    </svg> -->
-  </div>
+    </svg> 
+  </div> -->
 
   {% if site.related_posts.size >= 1 %}
   <div class="related">
@@ -416,30 +428,30 @@ layout: default
   </style>
 
   <script>
-    function wrapOverflowingMath() {
-      const mathContainers = document.querySelectorAll("mjx-container");
+    // function wrapOverflowingMath() {
+    //   const mathContainers = document.querySelectorAll("mjx-container");
 
-      mathElements.forEach(mjx_container => {
-        const mjx_math = mjx_container.querySelector("mjx-math");
+    //   mathContainers.forEach(mjx_container => {
+    //     const mjx_math = mjx_container.querySelector("mjx-math");
 
-        console.log(mjx_math.clientWidth, mjx_container.clientWidth);
+    //     console.log(mjx_math.clientWidth, mjx_container.clientWidth);
 
-        if (mjx_math && mjx_math.clientWidth > mjx_container.clientWidth) {
-          mjx_math.classList.add("centered-math");
-          mjx_container.classList.add("scrollable-container");
-        } else {
-          mjx_math.classList.remove("centered-math");
-          mjx_container.classList.remove("scrollable-container");
-        }
-      });
-    }
+    //     if (mjx_math && mjx_math.clientWidth > mjx_container.clientWidth) {
+    //       mjx_math.classList.add("centered-math");
+    //       mjx_container.classList.add("scrollable-container");
+    //     } else {
+    //       mjx_math.classList.remove("centered-math");
+    //       mjx_container.classList.remove("scrollable-container");
+    //     }
+    //   });
+    // }
 
-    window.addEventListener("load", wrapOverflowingMath);
-    window.addEventListener("resize", wrapOverflowingMath);
+    // window.addEventListener("load", wrapOverflowingMath);
+    // window.addEventListener("resize", wrapOverflowingMath);
   </script>
 
-  <script>
-    function setHeight(element, height) {
+  <!-- <script>
+  function setHeight(element, height) {
     element.style.height = height + 'px';
   }
 
@@ -482,5 +494,330 @@ layout: default
       }
     });
   });
+  </script> -->
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    /*!
+ * hoverIntent v1.9.0 // 2017.09.01 // jQuery v1.7.0+
+ * http://briancherne.github.io/jquery-hoverIntent/
+ *
+ * You may use hoverIntent under the terms of the MIT license. Basically that
+ * means you are free to use hoverIntent as long as this header is left intact.
+ * Copyright 2007-2017 Brian Cherne
+ */
+
+/* hoverIntent is similar to jQuery's built-in "hover" method except that
+ * instead of firing the handlerIn function immediately, hoverIntent checks
+ * to see if the user's mouse has slowed down (beneath the sensitivity
+ * threshold) before firing the event. The handlerOut function is only
+ * called after a matching handlerIn.
+ *
+ * // basic usage ... just like .hover()
+ * .hoverIntent( handlerIn, handlerOut )
+ * .hoverIntent( handlerInOut )
+ *
+ * // basic usage ... with event delegation!
+ * .hoverIntent( handlerIn, handlerOut, selector )
+ * .hoverIntent( handlerInOut, selector )
+ *
+ * // using a basic configuration object
+ * .hoverIntent( config )
+ *
+ * @param  handlerIn   function OR configuration object
+ * @param  handlerOut  function OR selector for delegation OR undefined
+ * @param  selector    selector OR undefined
+ * @author Brian Cherne <brian(at)cherne(dot)net>
+ */
+
+;(function(factory) {
+    'use strict';
+    if (typeof define === 'function' && define.amd) {
+        define(['jquery'], factory);
+    } else if (jQuery && !jQuery.fn.hoverIntent) {
+        factory(jQuery);
+    }
+})(function($) {
+    'use strict';
+
+    // default configuration values
+    var _cfg = {
+        interval: 50,
+        sensitivity: 6,
+        timeout: 0
+    };
+
+    // counter used to generate an ID for each instance
+    var INSTANCE_COUNT = 0;
+
+    // current X and Y position of mouse, updated during mousemove tracking (shared across instances)
+    var cX, cY;
+
+    // saves the current pointer position coordinates based on the given mousemove event
+    var track = function(ev) {
+        cX = ev.pageX;
+        cY = ev.pageY;
+    };
+
+    // compares current and previous mouse positions
+    var compare = function(ev,$el,s,cfg) {
+        // compare mouse positions to see if pointer has slowed enough to trigger `over` function
+        if ( Math.sqrt( (s.pX-cX)*(s.pX-cX) + (s.pY-cY)*(s.pY-cY) ) < cfg.sensitivity ) {
+            $el.off(s.event,track);
+            delete s.timeoutId;
+            // set hoverIntent state as active for this element (permits `out` handler to trigger)
+            s.isActive = true;
+            // overwrite old mouseenter event coordinates with most recent pointer position
+            ev.pageX = cX; ev.pageY = cY;
+            // clear coordinate data from state object
+            delete s.pX; delete s.pY;
+            return cfg.over.apply($el[0],[ev]);
+        } else {
+            // set previous coordinates for next comparison
+            s.pX = cX; s.pY = cY;
+            // use self-calling timeout, guarantees intervals are spaced out properly (avoids JavaScript timer bugs)
+            s.timeoutId = setTimeout( function(){compare(ev, $el, s, cfg);} , cfg.interval );
+        }
+    };
+
+    // triggers given `out` function at configured `timeout` after a mouseleave and clears state
+    var delay = function(ev,$el,s,out) {
+        delete $el.data('hoverIntent')[s.id];
+        return out.apply($el[0],[ev]);
+    };
+
+    $.fn.hoverIntent = function(handlerIn,handlerOut,selector) {
+        // instance ID, used as a key to store and retrieve state information on an element
+        var instanceId = INSTANCE_COUNT++;
+
+        // extend the default configuration and parse parameters
+        var cfg = $.extend({}, _cfg);
+        if ( $.isPlainObject(handlerIn) ) {
+            cfg = $.extend(cfg, handlerIn);
+            if ( !$.isFunction(cfg.out) ) {
+                cfg.out = cfg.over;
+            }
+        } else if ( $.isFunction(handlerOut) ) {
+            cfg = $.extend(cfg, { over: handlerIn, out: handlerOut, selector: selector } );
+        } else {
+            cfg = $.extend(cfg, { over: handlerIn, out: handlerIn, selector: handlerOut } );
+        }
+
+        // A private function for handling mouse 'hovering'
+        var handleHover = function(e) {
+            // cloned event to pass to handlers (copy required for event object to be passed in IE)
+            var ev = $.extend({},e);
+
+            // the current target of the mouse event, wrapped in a jQuery object
+            var $el = $(this);
+
+            // read hoverIntent data from element (or initialize if not present)
+            var hoverIntentData = $el.data('hoverIntent');
+            if (!hoverIntentData) { $el.data('hoverIntent', (hoverIntentData = {})); }
+
+            // read per-instance state from element (or initialize if not present)
+            var state = hoverIntentData[instanceId];
+            if (!state) { hoverIntentData[instanceId] = state = { id: instanceId }; }
+
+            // state properties:
+            // id = instance ID, used to clean up data
+            // timeoutId = timeout ID, reused for tracking mouse position and delaying "out" handler
+            // isActive = plugin state, true after `over` is called just until `out` is called
+            // pX, pY = previously-measured pointer coordinates, updated at each polling interval
+            // event = string representing the namespaced event used for mouse tracking
+
+            // clear any existing timeout
+            if (state.timeoutId) { state.timeoutId = clearTimeout(state.timeoutId); }
+
+            // namespaced event used to register and unregister mousemove tracking
+            var mousemove = state.event = 'mousemove.hoverIntent.hoverIntent'+instanceId;
+
+            // handle the event, based on its type
+            if (e.type === 'mouseenter') {
+                // do nothing if already active
+                if (state.isActive) { return; }
+                // set "previous" X and Y position based on initial entry point
+                state.pX = ev.pageX; state.pY = ev.pageY;
+                // update "current" X and Y position based on mousemove
+                $el.off(mousemove,track).on(mousemove,track);
+                // start polling interval (self-calling timeout) to compare mouse coordinates over time
+                state.timeoutId = setTimeout( function(){compare(ev,$el,state,cfg);} , cfg.interval );
+            } else { // "mouseleave"
+                // do nothing if not already active
+                if (!state.isActive) { return; }
+                // unbind expensive mousemove event
+                $el.off(mousemove,track);
+                // if hoverIntent state is true, then call the mouseOut function after the specified delay
+                state.timeoutId = setTimeout( function(){delay(ev,$el,state,cfg.out);} , cfg.timeout );
+            }
+        };
+
+        // listen for mouseenter and mouseleave
+        return this.on({'mouseenter.hoverIntent':handleHover,'mouseleave.hoverIntent':handleHover}, cfg.selector);
+    };
+});
+
   </script>
+
+  <script>
+  $(document).ready(function() {
+    $('.toc > ul li').each(function() {
+      if ($(this).children('ul').length > 0) {
+        $(this).addClass('parent');
+      }
+    });
+
+    // $(".toc > ul li.parent").hover(
+    //   function() {
+    //     $(this).toggleClass('active');
+    //     $(this).children('ul').slideDown({ duration: 'fast'});
+    //   },
+    //   function() {
+    //     $(this).toggleClass('active');
+    //     $(this).children('ul').slideUp();
+    //   }
+    // );
+
+    // $('.toc > ul li.parent > ul').hide();
+
+    // Hover functionality
+    $(".toc > ul li.parent").hover(
+        function() {
+            $(this).addClass('active');
+            $(this).children('ul').slideDown({ duration: 'fast'});
+        },
+        function() {
+            if (!$(this).hasClass('current-section')) {
+                $(this).removeClass('active');
+                $(this).children('ul').slideUp();
+            }
+        }
+    );
+
+    // Initially hide all submenus
+    $('.toc > ul li.parent > ul').hide();
+
+    // Function to update the current section
+    function updateCurrentSection() {
+        var scrollPosition = $(window).scrollTop();
+
+        // Check each section's position
+        $('.toc a').each(function() {
+            var currentLink = $(this);
+            var refElement = $(currentLink.attr("href"));
+            
+            if (refElement.length) {
+                var sectionTop = refElement.offset().top - 100; // 100px offset for better UX
+                var sectionBottom = sectionTop + refElement.outerHeight();
+
+                if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
+                    $('.toc li').removeClass('current-section');
+                    currentLink.parents('li').addClass('current-section active');
+                    currentLink.parents('li').children('ul').slideDown();
+                    return false; // Exit the each() loop
+                }
+            }
+        });
+    }
+
+    // Run on page load
+    updateCurrentSection();
+
+    // Run on scroll
+    $(window).scroll(function() {
+        updateCurrentSection();
+    });
+
+
+    // var currentTocItemLeader = null;
+
+    // function openIfChildActive(element) {
+    //   // recursive function that calls itself on children first and then checks to see if any children are active
+    //   // if any children are active, open the parent and set self to active
+
+    //   // check if element has class current-toc-item-leader
+    //   // if so stop the recursion
+    //   if (element.hasClass('current-toc-item-leader')) {
+    //     return;
+    //   }
+
+    //   var children = element.children('ul').children('li');
+
+    //   if (children.length === 0) {
+    //     return;
+    //   }
+
+    //   anyActive = false;
+    //   children.each(function() {
+    //     openIfChildActive($(this));
+    //     if ($(this).hasClass('active')) {
+    //       anyActive = true;
+    //     }
+    //   });
+
+    //   if (element.hasClass('toc')) {
+    //     return;
+    //   }
+
+    //   if (anyActive && !element.hasClass('active')) {
+    //     element.addClass('active');
+    //     element.addClass('current-toc-item');
+    //     element.children('ul').slideDown();
+    //   } else if (!anyActive && element.hasClass('active')) {
+    //     element.removeClass('active');
+    //     element.removeClass('current-toc-item');
+    //     element.children('ul').slideUp();
+    //   }
+    // }
+
+    // function setTocOpen() {
+    //   var tocItems = $('.toc > ul li');
+    //   var windowHeight = window.innerHeight;
+    //   var toc = $('.toc');
+
+    //   // find the toc item that is currently visible on the screen
+    //   // if no item is visible, find the item that is just above the screen
+    //   var currentTocItem = null;
+    //   tocItems.each(function() {
+    //     var target = document.getElementById($(this).find('a').attr('href').slice(1));
+    //     var targetBounds = target.getBoundingClientRect();
+
+    //     // if target is in or above the screen and below currentTocItem, set currentTocItem to this
+    //     if (targetBounds.top < windowHeight * 0.9) {
+    //       if (!currentTocItem || targetBounds.top > currentTocItem[0].getBoundingClientRect().top) {
+    //         currentTocItem = $(this);
+    //       }
+    //     }
+    //   });
+
+    //   // open the current toc item and its parents using slideToggle
+    //   if (currentTocItem && !currentTocItem.hasClass('current-toc-item')) {
+    //     console.log('setting current toc item');
+    //     currentTocItem.addClass('current-toc-item');
+    //     currentTocItem.addClass('active');
+    //     currentTocItem.children('ul').slideDown();
+
+
+    //     currentTocItem.addClass('current-toc-item-leader');
+    //     if (currentTocItemLeader) {
+    //       currentTocItemLeader.removeClass('current-toc-item-leader');
+    //     }
+    //     currentTocItemLeader = currentTocItem;
+
+    //     // open the parent items in a top down manner using openIfChildActive
+    //     // get root of the toc
+    //     openIfChildActive(toc);
+    //   }
+      
+    // }
+
+    // // set the toc open when the page loads
+    // setTocOpen();
+
+    // // set the toc open when the user scrolls
+    // window.addEventListener('scroll', setTocOpen);
+
+    // // set the toc open when the user resizes the window
+    // window.addEventListener('resize', setTocOpen);
+  });
+  </script> -->
 </div>
