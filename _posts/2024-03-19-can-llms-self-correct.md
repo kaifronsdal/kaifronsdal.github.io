@@ -3,7 +3,7 @@ layout: post
 title: Can AI Self-Correct? Analyzing the Limitations of Large Language Models
 ---
 
-_This post is a summary of [this](/writing/CS224N__Project_Final_Report.pdf) research paper writen as a final project for Stanford's CS 224N and Intro to AI Alignment classes._
+_This post is a summary of [this](/projects/CS224N__Project_Final_Report.pdf) research paper writen as a final project for Stanford's CS 224N and Intro to AI Alignment classes._
 
 As models become more and more powerful, they have started to approach or exceed human-level performance on a variety of tasks. In order to train these models, researchers have been using increasingly large datasets and more compute. However, as these model approach human limits, it becomes harder and harder to improve them from human feedback.
 
