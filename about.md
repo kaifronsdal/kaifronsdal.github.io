@@ -3,15 +3,20 @@ layout: page
 title: About
 ---
 
-Hey there! I am an undergraduate researcher at Stanford University where I study computer science, mathematics, and statistics. Currently, I'm working in Proffessor Sanmi Koyejo's [STAIR lab](https://stairlab.stanford.edu/) where my primary focus is on automated theorem proving.
+Hey there! I am an undergraduate researcher at Stanford University where I study mathematics and computer science. Currently, I work on AI safety and alignment research, investigating ways to make AI systems more reliable, interpretable, and aligned with human values.
 
-Previously, I've worked on controlling robots with language, creating robust agents through adversarial reinforcement learning, and mapping burned regions from satellite imagery. I am passionate about leveraging artificial intelligence to solve real-world problems and improve safety and reliability of these systems.
+Through my work at the ML Alignment & Theory Scholars (MATS) program, I focussed on detecting and preventing potentially dangerous capabilities in AI systems. My research spans from evaluating model behaviors to developing tools for safety testing, with contributions to frameworks used by major AI organizations including DeepMind, Anthropic, and the UK AI Safety Institute.
 
-Off the grid, I am enthusiastic about Ultimate Frisbee and take pride in representing Stanford as co-captain of Stanford's club team, Huck-Syndrome. I believe in fostering a challenging and competitive environment.
+Previously, I've explored various aspects of AI through projects in adversarial reinforcement learning, language-controlled robotics, and automated theorem-proving. These diverse experiences helped me recognize the crucial importance of ensuring AI systems remain safe and beneficial as they become more capable.
 
-Creatively, I find joy in pottery, taking joy in envisioning and moulding unique designs. This form of artistry provides a counterbalance to my research-focused lifestyle.
+Off the grid, I am love to play Ultimate Frisbee and take pride in representing Stanford as co-captain of Stanford's club team, Huck-Syndrome.
 
-Scroll down to see my research, teaching, other projects, and course work. Feeling adventurous? Check these out as well: 
+<div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 20px 0;">
+    <img src="assets/about/IMG_3240.JPG" alt="Ultimate Frisbee action shot 1" style="height: 300px; object-fit: cover;">
+    <img src="assets/about/IMG_7301.jpg" alt="Ultimate Frisbee action shot 2" style="height: 300px; object-fit: cover;">
+</div>
+
+In my free time, I enjoy making pottery and perform improv. Whether I'm making (occasionally lopsided) mugs or thinking on my feet during a scene, these creative outlets help me stay balanced and bring some fun into my week.
 
 <!-- <p class="message">
   Hey there! This page is included as an example. Feel free to customize it for your own use upon downloading. Carry on!
