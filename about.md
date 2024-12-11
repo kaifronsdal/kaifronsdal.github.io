@@ -12,8 +12,8 @@ Previously, I've explored various aspects of AI through projects in adversarial 
 Off the grid, I am love to play Ultimate Frisbee and take pride in representing Stanford as co-captain of Stanford's club team, Huck-Syndrome.
 
 <div style="display: flex; justify-content: center; align-items: center; gap: 20px; margin: 20px 0;">
-    <img src="assets/about/IMG_3240.JPG" alt="Ultimate Frisbee action shot 1" style="height: 300px; object-fit: cover;">
-    <img src="assets/about/IMG_7301.jpg" alt="Ultimate Frisbee action shot 2" style="height: 300px; object-fit: cover;">
+    <img src="/assets/about/IMG_3240.JPG" alt="Ultimate Frisbee action shot 1" style="height: 300px; object-fit: cover;">
+    <img src="/assets/about/IMG_7301.jpg" alt="Ultimate Frisbee action shot 2" style="height: 300px; object-fit: cover;">
 </div>
 
 In my free time, I enjoy making pottery and perform improv. Whether I'm making (occasionally lopsided) mugs or thinking on my feet during a scene, these creative outlets help me stay balanced and bring some fun into my week.
